@@ -1,12 +1,15 @@
 .resolver-input {
-    margin-top: 20px;
-    padding: 20px;
-    background-color: gray;
 }
 
-.resolver-input input {
+.resolver-input button.button {
+	margin-right: 20px;
 }
 
-.resolver-input button {
-	margin-left: 20px;
+.resolver-input .input input {
+	margin-right: 20px;
+	width: 400px;
+}
+
+.resolver-input div.dropdown {
+	width: 400px;
 }

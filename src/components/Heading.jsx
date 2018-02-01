@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 
+import { Segment, Image } from 'semantic-ui-react'
+
 export class Heading extends Component {
 
     render() {
         return (
-        	<header className="heading">
-        		<img src="images/logo-dif.png" />
-	            <h1>Universal Resolver</h1>
-	        </header>
+        	<Segment className='heading'>
+   				<Image src='images/logo.jpg' />
+			</Segment>
         );
     }
 

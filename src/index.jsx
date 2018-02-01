@@ -1,16 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import Heading from './components/Heading';
-import Resolver from './components/Resolver';
+import App from './components/App';
 
-import './styles/app.scss';
-import 'topcoat/css/topcoat-desktop-light.min.css';
+import 'semantic-ui-css/semantic.min.css';
+
+import './styles/index.scss';
 
 ReactDOM.render(
-   <div>
-      <Heading />
-      <Resolver />
-   </div>,
-   document.getElementById('app')
+	<div>
+		<App />
+	</div>,
+	document.getElementById('app')
 );

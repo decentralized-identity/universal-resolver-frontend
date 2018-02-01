@@ -1,26 +1,89 @@
 import React, { Component } from 'react';
 
+import { Segment, Tab, Divider } from 'semantic-ui-react'
+
 import ResolverInput from './ResolverInput';
-import ResolverResult from './ResolverResult';
+import Error from './Error';
+import DidResult from './result/DidResult';
+import DidDocument from './result/DidDocument';
+import ResolverMetadata from './result/ResolverMetadata';
+import DriverMetadata from './result/DriverMetadata';
 
 export class Resolver extends Component {
 
 	constructor (props) {
 		super(props);
-		this.state = { result: '(none)' };
+		this.state = { loading: false, didReference: '', didDocument: '', resolverMetadata: '', driverMetadata: '', error: '' };
+		this.examples = [
+			'did:sov:WRfXPg8dantKVubE3HX8pw',
+			'did:btcr:xkrn-xzcr-qqlv-j6sl',
+			'did:v1:testnet:5431fafa-a38f-4e37-96b6-cdeb8e5d1d40',
+			'did:uport:2ok9oMAM54TeFMfLb3ZX4i9Qu6x5pcPA7nV',
+			'did:stack:v0:16EMaNw3pkn3v6f2BgnSSs53zAKH4Q8YJg-0',
+			'did:ipid:QmbFuwbp7yFDTMX6t8HGcEiy3iHhfvng89A19naCYGKEBj'
+		];
 	}
 
     render() {
+    	var resultOrError;
+    	if (this.state.error) resultOrError = (
+    		<Error text={this.state.error} />
+    		);
+    	if (this.state.didReference && this.state.didDocument) resultOrError = (
+            <DidResult
+            	didReference={this.state.didReference}
+            	didDocument={this.state.didDocument}
+            	error={this.state.error} />
+            );
+
         return (
-            <div className="resolver">
-                <ResolverInput onResult={this.onResult.bind(this)} />
-                <ResolverResult result={this.state.result} />
-            </div>
+            <Segment className="resolver">
+                <ResolverInput 
+                	examples={this.examples}
+                	onClear={this.onClear.bind(this)}
+                	onLoading={this.onLoading.bind(this)}
+                	onResult={this.onResult.bind(this)}
+                	onError={this.onError.bind(this)} />
+                <Divider />
+                <Tab panes={[
+					{ menuItem: 'DID RESULT', render: () =>
+					<Tab.Pane loading={this.state.loading}>
+						{resultOrError}
+					</Tab.Pane> },
+					{ menuItem: 'DID DOCUMENT', render: () =>
+					<Tab.Pane loading={this.state.loading}>
+		                <DidDocument
+		                	didDocument={this.state.didDocument} />
+					</Tab.Pane> },
+					{ menuItem: 'RESOLVER METADATA', render: () =>
+					<Tab.Pane loading={this.state.loading}>
+		                <ResolverMetadata 
+		                	resolverMetadata={this.state.resolverMetadata} />
+					</Tab.Pane> },
+					{ menuItem: 'DRIVER METADATA', render: () =>
+					<Tab.Pane loading={this.state.loading}>
+		                <DriverMetadata 
+		                	driverMetadata={this.state.driverMetadata} />
+					</Tab.Pane> }
+				]} />
+            </Segment>
         );
     }
 
-    onResult(result) {
-    	this.setState({ result: result });
+    onClear() {
+    	this.setState({ loading: false, didReference: '', didDocument: '', resolverMetadata: '', driverMetadata: '', error: '' });
+	}
+
+	onLoading() {
+    	this.setState({ loading: true, didReference: '', didDocument: '', resolverMetadata: '', driverMetadata: '', error: '' });
+	}
+
+    onResult(didReference, didDocument, resolverMetadata, driverMetadata) {
+    	this.setState({ loading: false, didReference: didReference, didDocument: didDocument, resolverMetadata: resolverMetadata, driverMetadata: driverMetadata, error: '' });
+	}
+
+    onError(error) {
+    	this.setState({ loading: false, didReference: '', didDocument: '', resolverMetadata: '', driverMetadata: '', error: error });
 	}
 }
 

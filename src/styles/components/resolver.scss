@@ -1,5 +1,9 @@
 @import 'components/resolver-input';
-@import 'components/resolver-result';
+@import 'components/error';
+@import 'components/result/did-result';
+@import 'components/result/did-document';
+@import 'components/result/resolver-metadata';
+@import 'components/result/driver-metadata';
 
 .resolver {
 }
