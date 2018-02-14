@@ -14,7 +14,7 @@ export class ConfigurationButton extends Component {
 	onClick() {
 //		this.props.onLoading();
 		axios
-			.get('http://localhost:8080/1.0/properties/')
+			.get(env.backendUrl + '1.0/properties/')
 			.then(response => {
 				this.setState({ drivers: response.data });
 			})

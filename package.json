@@ -4,8 +4,8 @@
   "description": "Universal Resolver Frontend",
   "main": "index.js",
   "scripts": {
-    "build": "webpack -p",
-    "dev": "webpack-dev-server --hot --inline --port 7080"
+    "build": "webpack --config webpack.prod.js -p",
+    "dev": "webpack-dev-server --config webpack.dev.js --hot --inline --port 7080"
   },
   "keywords": [
     "DID"
@@ -24,7 +24,8 @@
     "style-loader": "^0.19.1",
     "url-loader": "^0.6.2",
     "webpack": "^3.10.0",
-    "webpack-dev-server": "^2.11.1"
+    "webpack-dev-server": "^2.11.1",
+    "webpack-merge": "^4.1.1"
   },
   "dependencies": {
     "axios": "^0.17.1",

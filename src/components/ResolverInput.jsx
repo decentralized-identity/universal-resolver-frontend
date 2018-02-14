@@ -14,7 +14,7 @@ export class ResolverInput extends Component {
 	onClickResolve() {
 		this.props.onLoading();
 		axios
-			.get('http://localhost:8080/1.0/identifiers/' + encodeURIComponent(this.state.input))
+			.get(env.backendUrl + '1.0/identifiers/' + encodeURIComponent(this.state.input))
 			.then(response => {
 				const didReference = response.data.didReference;
 				const didDocument = response.data.didDocument;
