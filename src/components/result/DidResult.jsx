@@ -21,7 +21,7 @@ export class DidResult extends Component {
     	else if (typeof this.props.didDocument.publicKey === 'object') didDocumentPublicKeys = Array.of(this.props.didDocument.publicKey);
     	else didDocumentPublicKeys = Array.of();
 		const publicKeys = didDocumentPublicKeys.map((didDocumentPublicKey, i) =>
-			<PublicKey key={i} type={didDocumentPublicKey.type} publicKeyBase64={didDocumentPublicKey.publicKeyBase64} publicKeyPem={didDocumentPublicKey.publicKeyPem} publicKeyHex={didDocumentPublicKey.publicKeyHex} />
+			<PublicKey key={i} type={didDocumentPublicKey.type} publicKeyBase64={didDocumentPublicKey.publicKeyBase64} publicKeyBase58={didDocumentPublicKey.publicKeyBase58} publicKeyPem={didDocumentPublicKey.publicKeyPem} publicKeyHex={didDocumentPublicKey.publicKeyHex} />
 		);
         return (
         	<div className='did-result'>
