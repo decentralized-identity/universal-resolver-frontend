@@ -14,7 +14,7 @@ export class DidResult extends Component {
     	else if (typeof this.props.didDocument.service === 'object') didDocumentServices = Array.of(this.props.didDocument.service);
     	else didDocumentServices = Array.of();
 		const services = didDocumentServices.map((didDocumentService, i) =>
-			<Service key={i} type={didDocumentService.type} serviceEndpoint={didDocumentService.serviceEndpoint} />
+			<Service key={i} name={didDocumentService.name} type={didDocumentService.type} serviceEndpoint={didDocumentService.serviceEndpoint} selected={this.props.resolverMetadata.selectedServices.includes(i)} />
 		);
     	var didDocumentPublicKeys;
     	if (Array.isArray(this.props.didDocument.publicKey)) didDocumentPublicKeys = this.props.didDocument.publicKey;

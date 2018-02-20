@@ -33,6 +33,7 @@ export class Resolver extends Component {
             <DidResult
             	didReference={this.state.didReference}
             	didDocument={this.state.didDocument}
+				resolverMetadata={this.state.resolverMetadata}
             	error={this.state.error} />
             );
 
