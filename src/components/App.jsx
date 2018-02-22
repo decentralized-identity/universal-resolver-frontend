@@ -15,6 +15,7 @@ export class App extends Component {
 			{key: 'did:v1', name: 'did:v1'},
 			{key: 'did:uport', name: 'did:uport'},
 			{key: 'did:stack', name: 'did:stack'},
+			{key: 'did:erc725', name: 'did:erc725'},
 			{key: 'did:ipid', name: 'did:ipid'}
 		] };
 	}
