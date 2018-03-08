@@ -17,6 +17,7 @@ export class Resolver extends Component {
 		this.examples = [
 			'did:sov:WRfXPg8dantKVubE3HX8pw',
 			'did:btcr:xkrn-xzcr-qqlv-j6sl',
+			'did:btcr:x6lj-wzvr-qqrv-m80w',
 			'did:v1:test:nym:3AEJTDMSxDDQpyUftjuoeZ2Bazp4Bswj1ce7FJGybCUu',
 			'did:v1:test:nym:UxYjr6F3hqwiF3yffplpcsV3pXSWSzVQ2396WT65e2E',
 			'did:uport:2ok9oMAM54TeFMfLb3ZX4i9Qu6x5pcPA7nV',
