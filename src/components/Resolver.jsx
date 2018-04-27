@@ -23,7 +23,8 @@ export class Resolver extends Component {
 			'did:uport:2ok9oMAM54TeFMfLb3ZX4i9Qu6x5pcPA7nV',
 			'did:stack:v0:16EMaNw3pkn3v6f2BgnSSs53zAKH4Q8YJg-0',
 			'did:erc725:ropsten:2F2B37C890824242Cb9B0FE5614fA2221B79901E',
-			'did:ipid:QmbFuwbp7yFDTMX6t8HGcEiy3iHhfvng89A19naCYGKEBj'
+			'did:ipid:QmbFuwbp7yFDTMX6t8HGcEiy3iHhfvng89A19naCYGKEBj',
+			'did:dom:Jjbfgyu7My4RrbRNrXTPBz4PnhnMEE'
 		];
 	}
 
