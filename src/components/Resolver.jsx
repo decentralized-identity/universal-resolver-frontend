@@ -20,11 +20,14 @@ export class Resolver extends Component {
 			'did:btcr:x6lj-wzvr-qqrv-m80w',
 			'did:v1:test:nym:3AEJTDMSxDDQpyUftjuoeZ2Bazp4Bswj1ce7FJGybCUu',
 			'did:v1:test:nym:UxYjr6F3hqwiF3yffplpcsV3pXSWSzVQ2396WT65e2E',
-			'did:uport:2ok9oMAM54TeFMfLb3ZX4i9Qu6x5pcPA7nV',
+			'did:uport:2omWsSGspY7zhxaG6uHyoGtcYxoGeeohQXz',
 			'did:stack:v0:16EMaNw3pkn3v6f2BgnSSs53zAKH4Q8YJg-0',
 			'did:erc725:ropsten:2F2B37C890824242Cb9B0FE5614fA2221B79901E',
 			'did:ipid:QmbFuwbp7yFDTMX6t8HGcEiy3iHhfvng89A19naCYGKEBj',
-			'did:dom:Jjbfgyu7My4RrbRNrXTPBz4PnhnMEE'
+			'did:dom:Jjbfgyu7My4RrbRNrXTPBz4PnhnMEE',
+			'did:muport:Qmbrpc3gKtapsL5k6nZuzYvoMQZwMup5qWvss1q4XuaRJd',
+			'did:eth:0x3b0BC51Ab9De1e5B7B6E34E5b960285805C41736',
+			'did:ethr:0x3b0BC51Ab9De1e5B7B6E34E5b960285805C41736'
 		];
 	}
 
