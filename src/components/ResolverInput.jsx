@@ -19,8 +19,8 @@ export class ResolverInput extends Component {
 				const didReference = response.data.didReference;
 				const didDocument = response.data.didDocument;
 				const resolverMetadata = response.data.resolverMetadata;
-				const driverMetadata = response.data.driverMetadata;
-				this.props.onResult(didReference, didDocument, resolverMetadata, driverMetadata);
+				const methodMetadata = response.data.methodMetadata;
+				this.props.onResult(didReference, didDocument, resolverMetadata, methodMetadata);
 			})
 			.catch(error => {
 				if (error.response !== undefined && error.response.data !== undefined) {

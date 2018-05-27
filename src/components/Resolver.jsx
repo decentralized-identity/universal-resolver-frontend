@@ -7,13 +7,13 @@ import Error from './Error';
 import DidResult from './result/DidResult';
 import DidDocument from './result/DidDocument';
 import ResolverMetadata from './result/ResolverMetadata';
-import DriverMetadata from './result/DriverMetadata';
+import MethodMetadata from './result/MethodMetadata';
 
 export class Resolver extends Component {
 
 	constructor (props) {
 		super(props);
-		this.state = { loading: false, didReference: '', didDocument: '', resolverMetadata: '', driverMetadata: '', error: '' };
+		this.state = { loading: false, didReference: '', didDocument: '', resolverMetadata: '', methodMetadata: '', error: '' };
 		this.examples = [
 			'did:sov:WRfXPg8dantKVubE3HX8pw',
 			'did:btcr:xkrn-xzcr-qqlv-j6sl',
@@ -68,10 +68,10 @@ export class Resolver extends Component {
 		                <ResolverMetadata 
 		                	resolverMetadata={this.state.resolverMetadata} />
 					</Tab.Pane> },
-					{ menuItem: 'DRIVER METADATA', render: () =>
+					{ menuItem: 'METHOD METADATA', render: () =>
 					<Tab.Pane loading={this.state.loading}>
-		                <DriverMetadata 
-		                	driverMetadata={this.state.driverMetadata} />
+				<MethodMetadata
+					methodMetadata={this.state.methodMetadata} />
 					</Tab.Pane> }
 				]} />
             </Segment>
@@ -79,19 +79,19 @@ export class Resolver extends Component {
     }
 
     onClear() {
-    	this.setState({ loading: false, didReference: '', didDocument: '', resolverMetadata: '', driverMetadata: '', error: '' });
+	this.setState({ loading: false, didReference: '', didDocument: '', resolverMetadata: '', methodMetadata: '', error: '' });
 	}
 
 	onLoading() {
-    	this.setState({ loading: true, didReference: '', didDocument: '', resolverMetadata: '', driverMetadata: '', error: '' });
+	this.setState({ loading: true, didReference: '', didDocument: '', resolverMetadata: '', methodMetadata: '', error: '' });
 	}
 
-    onResult(didReference, didDocument, resolverMetadata, driverMetadata) {
-    	this.setState({ loading: false, didReference: didReference, didDocument: didDocument, resolverMetadata: resolverMetadata, driverMetadata: driverMetadata, error: '' });
+    onResult(didReference, didDocument, resolverMetadata, methodMetadata) {
+	this.setState({ loading: false, didReference: didReference, didDocument: didDocument, resolverMetadata: resolverMetadata, methodMetadata: methodMetadata, error: '' });
 	}
 
     onError(error) {
-    	this.setState({ loading: false, didReference: '', didDocument: '', resolverMetadata: '', driverMetadata: '', error: error });
+	this.setState({ loading: false, didReference: '', didDocument: '', resolverMetadata: '', methodMetadata: '', error: error });
 	}
 }
 
