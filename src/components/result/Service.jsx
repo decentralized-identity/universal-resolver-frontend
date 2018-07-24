@@ -13,7 +13,7 @@ export class Service extends Component {
 		) : null;
 		const type = this.props.type ? (
 			<Card.Meta>
-				{this.props.type}
+				({this.props.type})
 			</Card.Meta>
 		) : null;
 		return (
