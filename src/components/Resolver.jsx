@@ -16,6 +16,7 @@ export class Resolver extends Component {
 		this.state = { loading: false, didReference: '', didDocument: '', resolverMetadata: '', methodMetadata: '', error: '' };
 		this.examples = [
 			'did:sov:WRfXPg8dantKVubE3HX8pw',
+			'did:sov:stn:WRfXPg8dantKVubE3HX8pw',
 			'did:btcr:xz35-jzv2-qqs2-9wjt',
 			'did:btcr:x705-jzv2-qqaz-7vuz',
 			'did:btcr:xkrn-xzcr-qqlv-j6sl',
