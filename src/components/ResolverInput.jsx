@@ -16,7 +16,7 @@ export class ResolverInput extends Component {
 		axios
 			.get(env.backendUrl + '1.0/identifiers/' + encodeURIComponent(this.state.input))
 			.then(response => {
-				const didReference = response.data.didReference;
+				const didReference = response.data.resolverMetadata.didReference;
 				const didDocument = response.data.didDocument;
 				const resolverMetadata = response.data.resolverMetadata;
 				const methodMetadata = response.data.methodMetadata;

@@ -17,7 +17,8 @@ export class App extends Component {
 			{key: 'did:stack', name: 'did:stack'},
 			{key: 'did:erc725', name: 'did:erc725'},
 			{key: 'did:ipid', name: 'did:ipid'},
-			{key: 'did:dom', name: 'did:dom'}
+			{key: 'did:dom', name: 'did:dom'},
+			{key: 'dns-did', name: 'dns-did'}
 		] };
 	}
 
