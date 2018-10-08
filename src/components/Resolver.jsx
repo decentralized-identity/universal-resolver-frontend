@@ -4,6 +4,7 @@ import { Segment, Tab, Divider } from 'semantic-ui-react'
 
 import ResolverInput from './ResolverInput';
 import Error from './Error';
+import DidRedirect from './result/DidRedirect';
 import DidResult from './result/DidResult';
 import DidDocument from './result/DidDocument';
 import ResolverMetadata from './result/ResolverMetadata';
@@ -13,7 +14,7 @@ export class Resolver extends Component {
 
 	constructor (props) {
 		super(props);
-		this.state = { loading: false, didReference: '', didDocument: '', resolverMetadata: '', methodMetadata: '', error: '' };
+		this.state = { loading: false, redirect: '', didDocument: '', resolverMetadata: '', methodMetadata: '', error: '' };
 		this.examples = [
 			'did:sov:WRfXPg8dantKVubE3HX8pw',
 			'did:sov:stn:WRfXPg8dantKVubE3HX8pw',
@@ -34,14 +35,17 @@ export class Resolver extends Component {
 		];
 	}
 
-    render() {
-    	var resultOrError;
-    	if (this.state.error) resultOrError = (
-    		<Error text={this.state.error} />
-    		);
-    	if (this.state.didReference && this.state.didDocument) resultOrError = (
+	render() {
+		var resultOrError;
+		if (this.state.error) resultOrError = (
+			<Error text={this.state.error} />
+			);
+		else if (this.state.redirect) resultOrError = (
+			<DidRedirect
+				redirect={this.state.redirect} />
+			);
+		else if (this.state.didDocument) resultOrError = (
             <DidResult
-            	didReference={this.state.didReference}
             	didDocument={this.state.didDocument}
 				resolverMetadata={this.state.resolverMetadata}
             	error={this.state.error} />
@@ -57,7 +61,7 @@ export class Resolver extends Component {
                 	onError={this.onError.bind(this)} />
                 <Divider />
                 <Tab panes={[
-					{ menuItem: 'DID RESULT', render: () =>
+					{ menuItem: 'RESULT', render: () =>
 					<Tab.Pane loading={this.state.loading}>
 						{resultOrError}
 					</Tab.Pane> },
@@ -82,19 +86,19 @@ export class Resolver extends Component {
     }
 
     onClear() {
-	this.setState({ loading: false, didReference: '', didDocument: '', resolverMetadata: '', methodMetadata: '', error: '' });
+	this.setState({ loading: false, redirect: '', didDocument: '', resolverMetadata: '', methodMetadata: '', error: '' });
 	}
 
 	onLoading() {
-	this.setState({ loading: true, didReference: '', didDocument: '', resolverMetadata: '', methodMetadata: '', error: '' });
+	this.setState({ loading: true, redirect: '', didDocument: '', resolverMetadata: '', methodMetadata: '', error: '' });
 	}
 
-    onResult(didReference, didDocument, resolverMetadata, methodMetadata) {
-	this.setState({ loading: false, didReference: didReference, didDocument: didDocument, resolverMetadata: resolverMetadata, methodMetadata: methodMetadata, error: '' });
+    onResult(redirect, didDocument, resolverMetadata, methodMetadata) {
+	this.setState({ loading: false, redirect: redirect, didDocument: didDocument, resolverMetadata: resolverMetadata, methodMetadata: methodMetadata, error: '' });
 	}
 
     onError(error) {
-	this.setState({ loading: false, didReference: '', didDocument: '', resolverMetadata: '', methodMetadata: '', error: error });
+	this.setState({ loading: false, redirect: '', didDocument: '', resolverMetadata: '', methodMetadata: '', error: error });
 	}
 }
 

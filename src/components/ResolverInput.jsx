@@ -16,11 +16,11 @@ export class ResolverInput extends Component {
 		axios
 			.get(env.backendUrl + '1.0/identifiers/' + encodeURIComponent(this.state.input))
 			.then(response => {
-				const didReference = response.data.resolverMetadata.didReference;
+				const redirect = response.data.redirect;
 				const didDocument = response.data.didDocument;
 				const resolverMetadata = response.data.resolverMetadata;
 				const methodMetadata = response.data.methodMetadata;
-				this.props.onResult(didReference, didDocument, resolverMetadata, methodMetadata);
+				this.props.onResult(redirect, didDocument, resolverMetadata, methodMetadata);
 			})
 			.catch(error => {
 				if (error.response !== undefined && error.response.data !== undefined) {
