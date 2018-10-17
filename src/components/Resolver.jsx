@@ -44,7 +44,7 @@ export class Resolver extends Component {
 			<DidRedirect
 				redirect={this.state.redirect} />
 			);
-		else if (this.state.didDocument) resultOrError = (
+		else if (this.state.didDocument || this.state.resolverMetadata) resultOrError = (
             <DidResult
             	didDocument={this.state.didDocument}
 				resolverMetadata={this.state.resolverMetadata}
