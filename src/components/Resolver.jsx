@@ -47,8 +47,7 @@ export class Resolver extends Component {
 		else if (this.state.didDocument || this.state.resolverMetadata) resultOrError = (
             <DidResult
             	didDocument={this.state.didDocument}
-				resolverMetadata={this.state.resolverMetadata}
-            	error={this.state.error} />
+				resolverMetadata={this.state.resolverMetadata} />
             );
 
         return (
@@ -77,8 +76,8 @@ export class Resolver extends Component {
 					</Tab.Pane> },
 					{ menuItem: 'METHOD METADATA', render: () =>
 					<Tab.Pane loading={this.state.loading}>
-				<MethodMetadata
-					methodMetadata={this.state.methodMetadata} />
+						<MethodMetadata
+							methodMetadata={this.state.methodMetadata} />
 					</Tab.Pane> }
 				]} />
             </Segment>

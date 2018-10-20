@@ -34,7 +34,7 @@ export class DidResult extends Component {
 				</Card.Group>
 				<Divider />
 				<Card.Group>
-				{publicKeys}
+					{publicKeys}
 	        	</Card.Group>
         	</div>
         );
