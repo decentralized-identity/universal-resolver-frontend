@@ -23,11 +23,12 @@ export class App extends Component {
 	}
 
     render() {
+		const did = (this.props.location.hash && this.props.location.hash.indexOf("#did=") == 0) ? this.props.location.hash.substr("#did=".length) : null;
         return (
 			<div className="app">
                 <Drivers drivers={this.state.drivers} />
 				<Heading />
-				<Resolver />
+				<Resolver did={did} />
 				<Footer />
 			</div>
         );

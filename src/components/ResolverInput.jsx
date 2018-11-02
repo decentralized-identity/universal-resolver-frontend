@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Router, Route } from 'react-router';
 import axios from 'axios';
 
 import { Item, Column, Input, Button, Dropdown } from 'semantic-ui-react'
@@ -7,8 +8,13 @@ export class ResolverInput extends Component {
 
 	constructor (props) {
 		super(props)
-		this.state = { input: 'did:sov:WRfXPg8dantKVubE3HX8pw', example: '' };
+		const did = this.props.did ? this.props.did : 'did:sov:WRfXPg8dantKVubE3HX8pw';
+		this.state = { input: did, example: '' };
 		this.onChangeInput = this.onChangeInput.bind(this);
+	}
+
+	componentDidMount() {
+		if (this.props.did) this.onClickResolve();
 	}
 
 	onClickResolve() {
@@ -52,7 +58,7 @@ export class ResolverInput extends Component {
     	const examples = this.props.examples.map((example) => ({ text: example, value: example }));
         return (
         	<Item className="resolver-input">
-           		<Input label='did' value={this.state.input} onChange={this.onChangeInput} />
+				<Input label='did' value={this.state.input} onChange={this.onChangeInput} />
                 <Button primary onClick={this.onClickResolve.bind(this)}>Resolve</Button>
                 <Button secondary onClick={this.onClickClear.bind(this)}>Clear</Button>
     			<Dropdown placeholder='Examples' selection options={examples} value={this.state.example} onChange={this.onChangeExample.bind(this)} />
