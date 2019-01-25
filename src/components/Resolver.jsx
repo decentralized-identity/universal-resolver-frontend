@@ -17,12 +17,14 @@ export class Resolver extends Component {
 		this.state = { loading: false, redirect: '', didDocument: '', resolverMetadata: '', methodMetadata: '', error: '' };
 		this.examples = [
 			'did:sov:WRfXPg8dantKVubE3HX8pw',
+			'did:sov:CYQLsccvwhMTowprMjGjQ6',
 			'did:sov:stn:WRfXPg8dantKVubE3HX8pw',
 			'did:btcr:xz35-jzv2-qqs2-9wjt',
 			'did:btcr:x705-jzv2-qqaz-7vuz',
 			'did:btcr:xkrn-xzcr-qqlv-j6sl',
 			'did:v1:test:nym:3AEJTDMSxDDQpyUftjuoeZ2Bazp4Bswj1ce7FJGybCUu',
 			'did:v1:test:nym:UxYjr6F3hqwiF3yffplpcsV3pXSWSzVQ2396WT65e2E',
+			'did:jolo:e76fb4b4900e43891f613066b9afca366c6d22f7d87fc9f78a91515be24dfb21',
 			'did:uport:2omWsSGspY7zhxaG6uHyoGtcYxoGeeohQXz',
 			'did:stack:v0:16EMaNw3pkn3v6f2BgnSSs53zAKH4Q8YJg-0',
 			'did:erc725:ropsten:2F2B37C890824242Cb9B0FE5614fA2221B79901E',
