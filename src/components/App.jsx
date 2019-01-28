@@ -14,12 +14,12 @@ export class App extends Component {
 			{key: 'did:sov', name: 'did:sov'},
 			{key: 'did:v1', name: 'did:v1'},
 			{key: 'did:uport', name: 'did:uport'},
+			{key: 'did:jolo', name: 'did:jolo'},
 			{key: 'did:stack', name: 'did:stack'},
 			{key: 'did:erc725', name: 'did:erc725'},
 			{key: 'did:ipid', name: 'did:ipid'},
 			{key: 'did:dom', name: 'did:dom'},
-			{key: 'dns-did', name: 'dns-did'},
-			{key: 'did:jolo', name: 'did:jolo'}
+			{key: 'dns-did', name: 'dns-did'}
 		] };
 	}
 
