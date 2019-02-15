@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { Menu, Item } from 'semantic-ui-react'
+import { Menu } from 'semantic-ui-react'
 
 import ConfigurationButton from './ConfigurationButton';
 import Driver from './Driver';

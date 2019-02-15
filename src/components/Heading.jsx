@@ -2,16 +2,18 @@ import React, { Component } from 'react';
 
 import { Segment, Image } from 'semantic-ui-react'
 
+import WarningButton from './WarningButton';
+
 export class Heading extends Component {
 
     render() {
         return (
-        	<Segment className='heading'>
+        	<Segment className='heading' class="ui clearing segment">
+				<WarningButton />
    				<Image src='images/logo.jpg' />
 			</Segment>
         );
     }
-
 }
 
 export default Heading;

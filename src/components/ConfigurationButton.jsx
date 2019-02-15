@@ -31,22 +31,22 @@ export class ConfigurationButton extends Component {
 			});
     }
 
-    render() {
-    	const button = (
-			<Button onClick={this.onClick.bind(this)}>Configuration</Button>
-    	);
-    	const drivers = this.state.drivers == '' ? '' : JSON.stringify(this.state.drivers, null, 2);
-        return (
-		  <Modal trigger={button}>
-		    <Modal.Header>Configuration</Modal.Header>
-		    <Modal.Content>
-		      <Modal.Description>
-		                <Highlight>
-		                {drivers}
-		                </Highlight>
-		      </Modal.Description>
-		    </Modal.Content>
-		  </Modal>
+	render() {
+		const button = (
+			<Button onClick={this.onClick.bind(this)} className="configuration-button">Configuration</Button>
+		);
+		const drivers = this.state.drivers == '' ? '' : JSON.stringify(this.state.drivers, null, 2);
+		return (
+			<Modal trigger={button}>
+			    <Modal.Header>Configuration</Modal.Header>
+				<Modal.Content>
+					<Modal.Description>
+						<Highlight>
+							{drivers}
+						</Highlight>
+					</Modal.Description>
+				</Modal.Content>
+			</Modal>
         );
     }
 }
