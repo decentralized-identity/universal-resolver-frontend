@@ -24,7 +24,14 @@ export class App extends Component {
 	}
 
     render() {
-		const did = (this.props.location.hash && this.props.location.hash.indexOf("#did=") == 0) ? this.props.location.hash.substr("#did=".length) : null;
+		var did = null;
+		if (this.props.location.hash) {
+			if (this.props.location.hash.indexOf("#did=") == 0) {
+				did = this.props.location.hash.substr("#did=".length);
+			} else {
+				did = this.props.location.hash.substr(1);
+			}
+		}
         return (
 			<div className="app">
                 <Drivers drivers={this.state.drivers} />
