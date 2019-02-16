@@ -31,7 +31,7 @@ export class WarningButton extends Component {
 						instance for anything other than development and non-critical demos. From your perspective,
 						you should treat <strong>uniresolver.io</strong> as an untrusted third party that could theoretically manipulate
 						DID Resolution results. Instead, you should run your own instance of the Universal Resolver
-						to integrate with your applications and services.</p>
+						or other DID Resolution tools to integrate with your applications and services.</p>
 						<Divider/>
 						<p>
 						<Icon className="blue info circle" />
