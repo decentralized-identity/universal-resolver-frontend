@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { Menu } from 'semantic-ui-react'
+import { Menu, Item } from 'semantic-ui-react'
 
 import ConfigurationButton from './ConfigurationButton';
 import Driver from './Driver';
@@ -19,6 +19,7 @@ export class Drivers extends Component {
 			<Menu className='drivers'>
 				<ConfigurationButton />
 				{drivers}
+				<Item><a target="_blank" href="https://github.com/decentralized-identity/universal-resolver/blob/master/docs/driver-development.md">Add your driver?</a></Item>
 			</Menu>
 		);
 	}
