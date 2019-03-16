@@ -6,14 +6,14 @@ import WarningButton from './WarningButton';
 
 export class Heading extends Component {
 
-    render() {
-        return (
-        	<Segment className='heading' class="ui clearing segment">
+	render() {
+		return (
+			<Segment className='heading'>
 				<WarningButton />
-   				<Image src='images/logo.jpg' />
+				<Image src='images/logo.jpg' />
 			</Segment>
-        );
-    }
+		);
+	}
 }
 
 export default Heading;

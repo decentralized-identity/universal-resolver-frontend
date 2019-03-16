@@ -8,13 +8,13 @@ export class Driver extends Component {
 		super(props);
 	}
 
-    render() {
-        return (
-            <Item className="driver">
-            	{this.props.name}
-            </Item>
-        );
-    }
+	render() {
+		return (
+			<Item className="driver">
+				{this.props.id}
+			</Item>
+		);
+	}
 }
 
 export default Driver;

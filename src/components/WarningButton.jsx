@@ -7,12 +7,12 @@ export class WarningButton extends Component {
 
 	render() {
 		const button = (
-			<Button className="warning-button yellow icon right floated"><Icon className="exclamation triangle" /></Button>
+			<Button className="warning-button orange icon right floated"><Icon className="exclamation triangle" /></Button>
 		);
 		return (
 			<Modal trigger={button}>
 				<Modal.Header>
-					<Icon className="yellow exclamation triangle" />
+					<Icon className="orange exclamation triangle" />
 					Warning
 				</Modal.Header>
 				<Modal.Content>
