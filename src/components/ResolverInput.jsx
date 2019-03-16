@@ -59,7 +59,7 @@ export class ResolverInput extends Component {
         return (
         	<Item className="resolver-input">
 				<Input label='did' value={this.state.input} onChange={this.onChangeInput} />
-                <Button primary orange onClick={this.onClickResolve.bind(this)}>Resolve</Button>
+                <Button primary onClick={this.onClickResolve.bind(this)}>Resolve</Button>
                 <Button secondary onClick={this.onClickClear.bind(this)}>Clear</Button>
     			<Dropdown placeholder='Examples' selection options={examples} value={this.state.example} onChange={this.onChangeExample.bind(this)} />
 			</Item>
