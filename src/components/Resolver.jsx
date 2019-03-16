@@ -29,10 +29,11 @@ export class Resolver extends Component {
 			'did:stack:v0:16EMaNw3pkn3v6f2BgnSSs53zAKH4Q8YJg-0',
 			'did:erc725:ropsten:2F2B37C890824242Cb9B0FE5614fA2221B79901E',
 			'did:ipid:QmYA7p467t4BGgBL4NmyHtsXMoPrYH9b3kSG6dbgFYskJm',
-			'did:dom:Jjbfgyu7My4RrbRNrXTPBz4PnhnMEE',
+			'did:hcr:0f674e7e-4b49-4898-85f6-96176c1e30de',
 			'did:muport:Qmbrpc3gKtapsL5k6nZuzYvoMQZwMup5qWvss1q4XuaRJd',
 			'did:eth:0x3b0BC51Ab9De1e5B7B6E34E5b960285805C41736',
 			'did:ethr:0x3b0BC51Ab9De1e5B7B6E34E5b960285805C41736',
+			'did:dom:Jjbfgyu7My4RrbRNrXTPBz4PnhnMEE',
 			'ssi.labs.nic.at'
 		];
 	}

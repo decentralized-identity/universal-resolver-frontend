@@ -10,16 +10,17 @@ export class App extends Component {
 	constructor (props) {
 		super(props);
 		this.state = { drivers: [
-			{key: 'did:btcr', name: 'did:btcr'}, 
-			{key: 'did:sov', name: 'did:sov'},
-			{key: 'did:v1', name: 'did:v1'},
-			{key: 'did:uport', name: 'did:uport'},
-			{key: 'did:jolo', name: 'did:jolo'},
-			{key: 'did:stack', name: 'did:stack'},
-			{key: 'did:erc725', name: 'did:erc725'},
-			{key: 'did:ipid', name: 'did:ipid'},
-			{key: 'did:dom', name: 'did:dom'},
-			{key: 'dns-did', name: 'dns-did'}
+			{id: 'did-btcr', name: 'did:btcr'},
+			{id: 'did-sov', name: 'did:sov'},
+			{id: 'did-v1', name: 'did:v1'},
+			{id: 'did-uport', name: 'did:uport'},
+			{id: 'did-jolo', name: 'did:jolo'},
+			{id: 'did-stack', name: 'did:stack'},
+			{id: 'did-erc725', name: 'did:erc725'},
+			{id: 'did-ipid', name: 'did:ipid'},
+			{id: 'did-dom', name: 'did:dom'},
+			{id: 'did-hacera', name: 'did:hcr'},
+			{id: 'dns-did', name: 'dns-did'}
 		] };
 	}
 
