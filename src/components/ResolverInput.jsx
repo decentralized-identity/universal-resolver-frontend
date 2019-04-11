@@ -8,7 +8,7 @@ export class ResolverInput extends Component {
 
 	constructor (props) {
 		super(props)
-		const did = this.props.did ? this.props.did : 'did:sov:WRfXPg8dantKVubE3HX8pw';
+		const did = this.props.did ? this.props.did : this.props.examples[0];
 		this.state = { input: did, example: '' };
 		this.onChangeInput = this.onChangeInput.bind(this);
 	}
