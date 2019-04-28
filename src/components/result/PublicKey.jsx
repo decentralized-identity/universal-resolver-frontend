@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 
-import { Card } from 'semantic-ui-react'
+import { Card, Icon } from 'semantic-ui-react'
 
 export class PublicKey extends Component {
 
     render() {
+		const icon = this.props.selected ? 'key blue' : 'key';
 		var publicKey;
 		if (this.props.publicKeyBase64) publicKey = this.props.publicKeyBase64;
 		else if (this.props.publicKeyBase58) publicKey = this.props.publicKeyBase58;
@@ -13,17 +14,22 @@ export class PublicKey extends Component {
 		else if (this.props.ethereumAddress) publicKey = this.props.ethereumAddress;
 		else if (this.props.address) publicKey = this.props.address;
 		else publicKey = '(no value)';
+		publicKey = publicKey.match(/.{1,32}/g).join(' ');
+		const id = this.props.id ? (
+			<Card.Meta>
+				{this.props.id}
+			</Card.Meta>
+		) : null;
         return (
-        	<Card className='publickey'>
+        	<Card className='publickey fluid'>
         		<Card.Content>
 	        		<Card.Header>
-	        			Public Key
-	        		</Card.Header>
-	        		<Card.Meta>
+						<Icon className={icon} />
 	        			{this.props.type}
-	        		</Card.Meta>
+	        		</Card.Header>
+					{id}
 	        		<Card.Description>
-	        			{publicKey.match(/.{1,32}/g).join(' ')}
+	        			{publicKey}
 	        		</Card.Description>
         		</Card.Content>
             </Card>
