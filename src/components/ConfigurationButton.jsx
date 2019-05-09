@@ -21,15 +21,15 @@ export class ConfigurationButton extends Component {
 			.catch(error => {
 /*				if (error.response !== undefined && error.response.data !== undefined) {
 					this.props.onError(error.response.data);
-			    } else if (error.request !== undefined) {
+				} else if (error.request !== undefined) {
 					this.props.onError(String(error) + ": " + JSON.stringify(error.request));
-			    } else if (error.message !== undefined) {
+				} else if (error.message !== undefined) {
 					this.props.onError(error.message);
-			    } else {
+				} else {
 					this.props.onError(String(error));
-			    }*/
+				}*/
 			});
-    }
+	}
 
 	render() {
 		const button = (
@@ -38,7 +38,7 @@ export class ConfigurationButton extends Component {
 		const drivers = this.state.drivers == '' ? '' : JSON.stringify(this.state.drivers, null, 2);
 		return (
 			<Modal trigger={button}>
-			    <Modal.Header>Configuration</Modal.Header>
+				<Modal.Header>Configuration</Modal.Header>
 				<Modal.Content>
 					<Modal.Description>
 						<Highlight>
@@ -47,8 +47,8 @@ export class ConfigurationButton extends Component {
 					</Modal.Description>
 				</Modal.Content>
 			</Modal>
-        );
-    }
+		);
+	}
 }
 
 export default ConfigurationButton;

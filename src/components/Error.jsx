@@ -6,11 +6,11 @@ export class Error extends Component {
 		super(props)
 	}
 
-    render() {
-        return (
-        	<p className="error">{this.props.text}</p>
-        );
-    }
+	render() {
+		return (
+			<p className="error">{this.props.text}</p>
+		);
+	}
 
 }
 

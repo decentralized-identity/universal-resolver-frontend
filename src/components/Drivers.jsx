@@ -11,7 +11,7 @@ export class Drivers extends Component {
 		super(props);
 	}
 
-    render() {
+	render() {
 		const drivers = this.props.drivers.map((driver) =>
 			<Driver key={driver.id} id={driver.id} />
 		);

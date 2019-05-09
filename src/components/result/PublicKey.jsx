@@ -4,7 +4,7 @@ import { Card, Icon } from 'semantic-ui-react'
 
 export class PublicKey extends Component {
 
-    render() {
+	render() {
 		const icon = this.props.selected ? 'key blue' : 'key';
 		var publicKey;
 		if (this.props.publicKeyBase64) publicKey = this.props.publicKeyBase64;
@@ -20,21 +20,21 @@ export class PublicKey extends Component {
 				{this.props.id}
 			</Card.Meta>
 		) : null;
-        return (
-        	<Card className='publickey fluid'>
-        		<Card.Content>
-	        		<Card.Header>
+		return (
+			<Card className='publickey fluid'>
+				<Card.Content>
+					<Card.Header>
 						<Icon className={icon} />
-	        			{this.props.type}
-	        		</Card.Header>
+						{this.props.type}
+					</Card.Header>
 					{id}
-	        		<Card.Description>
-	        			{publicKey}
-	        		</Card.Description>
-        		</Card.Content>
-            </Card>
-        );
-    }
+					<Card.Description>
+						{publicKey}
+					</Card.Description>
+				</Card.Content>
+			</Card>
+		);
+	}
 }
 
 export default PublicKey;

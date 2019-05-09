@@ -23,7 +23,7 @@ export class App extends Component {
 		] };
 	}
 
-    render() {
+	render() {
 		var did = null;
 		if (this.props.location.hash) {
 			if (this.props.location.hash.indexOf("#did=") == 0) {
@@ -32,15 +32,15 @@ export class App extends Component {
 				did = this.props.location.hash.substr(1);
 			}
 		}
-        return (
+		return (
 			<div className="app">
-                <Drivers drivers={this.state.drivers} />
+				<Drivers drivers={this.state.drivers} />
 				<Heading />
 				<Resolver did={did} />
 				<Footer />
 			</div>
-        );
-    }
+		);
+	}
 }
 
 export default App;

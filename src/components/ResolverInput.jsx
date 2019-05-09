@@ -31,40 +31,40 @@ export class ResolverInput extends Component {
 			.catch(error => {
 				if (error.response !== undefined && error.response.data !== undefined) {
 					this.props.onError(error.response.data);
-			    } else if (error.request !== undefined) {
+				} else if (error.request !== undefined) {
 					this.props.onError(String(error) + ": " + JSON.stringify(error.request));
-			    } else if (error.message !== undefined) {
+				} else if (error.message !== undefined) {
 					this.props.onError(error.message);
-			    } else {
+				} else {
 					this.props.onError(String(error));
-			    }
+				}
 			});
-    }
+	}
 
 	onClickClear() {
 		this.props.onClear();
-    }
+	}
 
 	onChangeExample(e, data) {
 		this.setState({ input: data.value });
 		this.setState({ example: '' });
-    }
+	}
 
 	onChangeInput(e) {
 		this.setState({ input: e.target.value });
 	}
 
-    render() {
-    	const examples = this.props.examples.map((example) => ({ text: example, value: example }));
-        return (
-        	<Item className="resolver-input">
+	render() {
+		const examples = this.props.examples.map((example) => ({ text: example, value: example }));
+		return (
+			<Item className="resolver-input">
 				<Input label='did-url' value={this.state.input} onChange={this.onChangeInput} />
-                <Button primary onClick={this.onClickResolve.bind(this)}>Resolve</Button>
-                <Button secondary onClick={this.onClickClear.bind(this)}>Clear</Button>
-    			<Dropdown placeholder='Examples' selection options={examples} value={this.state.example} onChange={this.onChangeExample.bind(this)} />
+				<Button primary onClick={this.onClickResolve.bind(this)}>Resolve</Button>
+				<Button secondary onClick={this.onClickClear.bind(this)}>Clear</Button>
+				<Dropdown placeholder='Examples' selection options={examples} value={this.state.example} onChange={this.onChangeExample.bind(this)} />
 			</Item>
-        );
-    }
+		);
+	}
 }
 
 export default ResolverInput;
