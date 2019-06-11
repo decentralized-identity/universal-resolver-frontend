@@ -13,7 +13,6 @@ export class App extends Component {
 			{id: 'did-btcr', name: 'did:btcr'},
 			{id: 'did-sov', name: 'did:sov'},
 			{id: 'did-v1', name: 'did:v1'},
-			{id: 'did-uport', name: 'did:uport'},
 			{id: 'did-jolo', name: 'did:jolo'},
 			{id: 'did-stack', name: 'did:stack'},
 			{id: 'did-erc725', name: 'did:erc725'},
