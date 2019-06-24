@@ -38,8 +38,8 @@ export class DidResult extends Component {
 		var didDocumentPublicKeys;
 		if (this.props.didDocument && Array.isArray(this.props.didDocument.publicKey)) didDocumentPublicKeys = this.props.didDocument.publicKey;
 		else if (this.props.didDocument && typeof this.props.didDocument.publicKey === 'object') didDocumentPublicKeys = Array.of(this.props.didDocument.publicKey);
-		else if (this.props.didDocument && typeof this.props.didDocument.authentication === 'object' && Array.isArray(this.props.didDocument.authentication.publicKey)) didDocumentPublicKeys = this.props.didDocument.authentication.publicKey;
-		else if (this.props.didDocument && typeof this.props.didDocument.authentication === 'object' && typeof this.props.didDocument.authentication.publicKey === 'object') didDocumentPublicKeys = Array.of(this.props.didDocument.authentication.publicKey);
+		else if (this.props.didDocument && typeof this.props.didDocument.authentication[0] === 'object' && Array.isArray(this.props.didDocument.authentication[0].publicKey)) didDocumentPublicKeys = this.props.didDocument.authentication[0].publicKey;
+		else if (this.props.didDocument && typeof this.props.didDocument.authentication[0] === 'object' && typeof this.props.didDocument.authentication[0].publicKey === 'object') didDocumentPublicKeys = Array.of(this.props.didDocument.authentication[0].publicKey);
 		else didDocumentPublicKeys = Array.of();
 
 		var publicKeysList = didDocumentPublicKeys.map((didDocumentPublicKey, i) =>
