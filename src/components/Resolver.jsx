@@ -26,6 +26,7 @@ export class Resolver extends Component {
 			'did:btcr:xkrn-xz7q-q0mx-4cl',
 			'did:btcr:8ksa-czpq-qqqq-k85h-97',
 			'did:btcr:8kyt-fzzq-qqqq-ase0-d8',
+			'did:btcr:8yv2-xzpq-qqqq-9yce-nk',
 			'did:v1:test:nym:3AEJTDMSxDDQpyUftjuoeZ2Bazp4Bswj1ce7FJGybCUu',
 			'did:v1:test:nym:UxYjr6F3hqwiF3yffplpcsV3pXSWSzVQ2396WT65e2E',
 			'did:uport:2omWsSGspY7zhxaG6uHyoGtcYxoGeeohQXz',
