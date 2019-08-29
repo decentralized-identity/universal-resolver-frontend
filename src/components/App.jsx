@@ -19,6 +19,8 @@ export class App extends Component {
 			{id: 'did-erc725', name: 'did:erc725'},
 			{id: 'did-ipid', name: 'did:ipid'},
 			{id: 'did-hacera', name: 'did:hcr'},
+			{id: 'did-elem', name: 'did:elem'},
+			{id: 'did-neoid', name: 'did:neoid'},
 			{id: 'dns-did', name: 'dns-did'}
 		] };
 	}
