@@ -33,7 +33,7 @@ export class Resolver extends Component {
 			'did:ethr:0xE6Fe788d8ca214A080b0f6aC7F48480b2AEfa9a6',
 			'did:eth:0x3b0BC51Ab9De1e5B7B6E34E5b960285805C41736',
 			'did:muport:Qmbrpc3gKtapsL5k6nZuzYvoMQZwMup5qWvss1q4XuaRJd',
-			'did:jolo:e76fb4b4900e43891f613066b9afca366c6d22f7d87fc9f78a91515be24dfb21',
+			'did:jolo:1fb352353ff51248c5104b407f9c04c3666627fcf5a167d693c9fc84b75964e2',
 			'did:elem:sscP2_bGvj2z6qnSV68ja-WR8WKCLTvNoRJjYSBvDZs',
 			'did:hcr:0f674e7e-4b49-4898-85f6-96176c1e30de',
 			'did:neoid:priv:b4eeeb80d20bfb38b23001d0659ce0c1d96be0aa',
