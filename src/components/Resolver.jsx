@@ -31,8 +31,7 @@ export class Resolver extends Component {
 			'did:v1:test:nym:3AEJTDMSxDDQpyUftjuoeZ2Bazp4Bswj1ce7FJGybCUu',
 			'did:v1:test:nym:UxYjr6F3hqwiF3yffplpcsV3pXSWSzVQ2396WT65e2E',
 			'did:ethr:0xE6Fe788d8ca214A080b0f6aC7F48480b2AEfa9a6',
-			'did:eth:0x3b0BC51Ab9De1e5B7B6E34E5b960285805C41736',
-			'did:muport:Qmbrpc3gKtapsL5k6nZuzYvoMQZwMup5qWvss1q4XuaRJd',
+			'did:nacl:Md8JiMIwsapml_FtQ2ngnGftNP5UmVCAUuhnLyAsPxI',
 			'did:jolo:1fb352353ff51248c5104b407f9c04c3666627fcf5a167d693c9fc84b75964e2',
 			'did:elem:sscP2_bGvj2z6qnSV68ja-WR8WKCLTvNoRJjYSBvDZs',
 			'did:hcr:0f674e7e-4b49-4898-85f6-96176c1e30de',
@@ -41,7 +40,7 @@ export class Resolver extends Component {
 			'did:erc725:ropsten:2F2B37C890824242Cb9B0FE5614fA2221B79901E',
 			'did:ipid:QmYA7p467t4BGgBL4NmyHtsXMoPrYH9b3kSG6dbgFYskJm',
 			'did:stack:v0:16EMaNw3pkn3v6f2BgnSSs53zAKH4Q8YJg-0',
-			'did:uport:2omWsSGspY7zhxaG6uHyoGtcYxoGeeohQXz',
+			'did:web:uport.me',
 			'ssi.labs.nic.at'
 		];
 	}
