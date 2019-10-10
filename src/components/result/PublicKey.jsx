@@ -16,7 +16,7 @@ export class PublicKey extends Component {
 		else if (this.props.ethereumAddress) publicKey = this.props.ethereumAddress;
 		else if (this.props.address) publicKey = this.props.address;
 		else publicKey = '(no value)';
-		publicKey = publicKey.match(/.{1,32}/g).join(' ');
+		//publicKey = publicKey.match(/.{1,32}/g).join(' ');
 		const id = this.props.id ? (
 			<Card.Meta>
 				{this.props.id}
