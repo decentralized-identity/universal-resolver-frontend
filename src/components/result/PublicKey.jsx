@@ -11,6 +11,8 @@ export class PublicKey extends Component {
 		else if (this.props.publicKeyBase58) publicKey = this.props.publicKeyBase58;
 		else if (this.props.publicKeyHex) publicKey = this.props.publicKeyHex;
 		else if (this.props.publicKeyPem) publicKey = this.props.publicKeyPem;
+		else if (this.props.publicKeyJwk) publicKey = this.props.publicKeyJwk;
+		else if (this.props.publicKeyPgp) publicKey = this.props.publicKeyPgp;
 		else if (this.props.ethereumAddress) publicKey = this.props.ethereumAddress;
 		else if (this.props.address) publicKey = this.props.address;
 		else publicKey = '(no value)';

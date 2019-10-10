@@ -49,8 +49,10 @@ export class DidResult extends Component {
 				type={didDocumentPublicKey.type}
 				publicKeyBase64={didDocumentPublicKey.publicKeyBase64}
 				publicKeyBase58={didDocumentPublicKey.publicKeyBase58}
-				publicKeyPem={didDocumentPublicKey.publicKeyPem}
 				publicKeyHex={didDocumentPublicKey.publicKeyHex}
+				publicKeyPem={didDocumentPublicKey.publicKeyPem}
+				publicKeyJwk={didDocumentPublicKey.publicKeyJwk}
+				publicKeyPgp={didDocumentPublicKey.publicKeyPgp}
 				ethereumAddress={didDocumentPublicKey.ethereumAddress}
 				address={didDocumentPublicKey.address}
 				selected={this.props.resolverMetadata.selectedKeys ? this.props.resolverMetadata.selectedKeys.includes(i) : null} />
