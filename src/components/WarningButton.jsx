@@ -19,8 +19,8 @@ export class WarningButton extends Component {
 					<Modal.Description>
 						<p>Before using the Universal Resolver, make sure you understand two things:</p>
 						<Header>1. It's experimental</Header>
-						<p>Decentralized Identifiers (DIDs) are currently being developed by the <a href="https://w3c-ccg.github.io/">
-						W3C Credentials Community Group</a>. The <a href="https://w3c-ccg.github.io/did-spec/">DID</a> and <a href="https://w3c-ccg.github.io/did-resolution/">DID
+						<p>Decentralized Identifiers (DIDs) are currently being developed by the <a href="https://www.w3.org/2019/did-wg/">
+						W3C Decentralized Identifier Working Group</a>. The <a href="https://w3c.github.io/did-spec/">DID</a> and <a href="https://w3c-ccg.github.io/did-resolution/">DID
 						Resolution</a> specifications are
 						constantly evolving, and so is the Universal
 						Resolver implementation. Understand that
