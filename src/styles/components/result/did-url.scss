@@ -1,7 +1,9 @@
-.did-url {
+.did-url tr.header th {
+	background-color: #fff;
+	font-family: monospace;
 }
 
-.did-url tr.values td {
+.did-url tr.body td {
 	background-color: #eee;
 	font-family: monospace;
 }
