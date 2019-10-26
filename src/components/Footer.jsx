@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { Segment, Grid, Image, Header, Icon } from 'semantic-ui-react'
+import { Segment, Icon } from 'semantic-ui-react'
 
 export class Footer extends Component {
 

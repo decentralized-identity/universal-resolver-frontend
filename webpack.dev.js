@@ -9,4 +9,3 @@ module.exports = merge(common, {
     })
   ]
 });
-
