@@ -22,6 +22,8 @@ export class App extends Component {
 			{id: 'did-elem', name: 'did:elem'},
 			{id: 'did-neoid', name: 'did:neoid'},
 			{id: 'did-github', name: 'did:github'},
+			{id: 'did-ccp', name: 'did:ccp'},
+			{id: 'did-work', name: 'did:work'},
 			{id: 'dns-did', name: 'dns-did'}
 		] };
 	}
