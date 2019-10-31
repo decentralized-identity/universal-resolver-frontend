@@ -36,6 +36,7 @@ export class Resolver extends Component {
 			'did:elem:sscP2_bGvj2z6qnSV68ja-WR8WKCLTvNoRJjYSBvDZs',
 			'did:hcr:0f674e7e-4b49-4898-85f6-96176c1e30de',
 			'did:neoid:priv:b4eeeb80d20bfb38b23001d0659ce0c1d96be0aa',
+			'did:ccp:ceNobbK6Me9F5zwyE3MKY88QZLw',
 			'did:github:gjgd',
 			'did:erc725:ropsten:2F2B37C890824242Cb9B0FE5614fA2221B79901E',
 			'did:ipid:QmYA7p467t4BGgBL4NmyHtsXMoPrYH9b3kSG6dbgFYskJm',
