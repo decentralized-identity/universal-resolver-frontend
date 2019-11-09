@@ -6,39 +6,54 @@ import { Item, Column, Input, Button, Dropdown } from 'semantic-ui-react'
 
 export class ResolverInput extends Component {
 
-	constructor (props) {
+	constructor(props) {
 		super(props)
 		const did = this.props.did ? this.props.did : this.props.examples[0];
 		this.state = { input: did, example: '' };
 		this.onChangeInput = this.onChangeInput.bind(this);
 	}
 
-	componentDidMount() {
-		if (this.props.did) this.onClickResolve();
-	}
-
-	onClickResolve() {
-		this.props.onLoading();
+	resolve() {
 		axios
 			.get(env.backendUrl + '1.0/identifiers/' + encodeURIComponent(this.state.input))
 			.then(response => {
-				const redirect = response.data.redirect;
 				const didDocument = response.data.didDocument;
 				const resolverMetadata = response.data.resolverMetadata;
 				const methodMetadata = response.data.methodMetadata;
-				this.props.onResult(redirect, didDocument, resolverMetadata, methodMetadata);
+				this.props.onResult(didDocument, resolverMetadata, methodMetadata);
 			})
 			.catch(error => {
-				if (error.response !== undefined && error.response.data !== undefined) {
-					this.props.onError(error.response.data);
-				} else if (error.request !== undefined) {
+				if (error.response && error.response.data) {
+					var errorString;
+					if (error.response.status === 404)
+						errorString = "No result for " + this.state.input;
+					else
+						errorString = String(error);
+					if (typeof error.response.data === 'object') {
+						const didDocument = error.response.data.didDocument;
+						const resolverMetadata = error.response.data.resolverMetadata;
+						const methodMetadata = error.response.data.methodMetadata;
+						this.props.onError(errorString, didDocument, resolverMetadata, methodMetadata);
+					} else {
+						this.props.onError(errorString + ': ' + error.response.data);
+					}
+				} else if (error.request) {
 					this.props.onError(String(error) + ": " + JSON.stringify(error.request));
-				} else if (error.message !== undefined) {
+				} else if (error.message) {
 					this.props.onError(error.message);
 				} else {
 					this.props.onError(String(error));
 				}
 			});
+	}
+
+	componentDidMount() {
+		if (this.props.did) this.resolve();
+	}
+
+	onClickResolve() {
+		this.props.onLoading();
+		this.resolve();
 	}
 
 	onClickClear() {

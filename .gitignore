@@ -6,4 +6,5 @@ package-lock.json
 .project
 *.lock
 *.log
-
+/.idea/
+*.iml

@@ -3,12 +3,19 @@ import React, { Component } from 'react';
 import { Segment, Item, Card, Divider } from 'semantic-ui-react'
 
 import DidUrl from './DidUrl';
+import DidRedirect from './DidRedirect';
 import Service from './Service';
 import PublicKey from './PublicKey';
 
 export class DidResult extends Component {
 
 	render() {
+
+		var redirect = null;
+		if (this.props.methodMetadata.redirect) redirect = (
+			<DidRedirect
+				redirect={this.state.redirect} />
+		);
 
 		var didDocumentServices;
 		if (this.props.didDocument && Array.isArray(this.props.didDocument.service)) didDocumentServices = this.props.didDocument.service;
@@ -103,6 +110,7 @@ export class DidResult extends Component {
 
 		return (
 			<div className='did-result'>
+				{redirect}
 				<Item.Group>
 					<Item>
 						<Item.Content>

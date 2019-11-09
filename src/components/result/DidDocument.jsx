@@ -5,12 +5,13 @@ import { Highlight } from 'react-fast-highlight';
 export class DidDocument extends Component {
 
 	render() {
-		const didDocument = this.props.didDocument == '' ? '' : JSON.stringify(this.props.didDocument, null, 2);
-		return (
+		const didDocumentString = this.props.didDocument ? JSON.stringify(this.props.didDocument, null, 2) : null;
+		const didDocument = didDocumentString ? (
 			<Highlight className='js'>
-				{didDocument}
+				{didDocumentString}
 			</Highlight>
-		);
+		) : null;
+		return didDocument;
 	}
 }
 
