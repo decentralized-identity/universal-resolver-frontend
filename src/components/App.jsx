@@ -10,21 +10,21 @@ export class App extends Component {
 	constructor (props) {
 		super(props);
 		this.state = { drivers: [
-			{id: 'did-btcr', name: 'did:btcr'},
-			{id: 'did-sov', name: 'did:sov'},
-			{id: 'did-v1', name: 'did:v1'},
-			{id: 'did-uport', name: 'did:uport'},
-			{id: 'did-jolo', name: 'did:jolo'},
-			{id: 'did-stack', name: 'did:stack'},
-			{id: 'did-erc725', name: 'did:erc725'},
-			{id: 'did-ipid', name: 'did:ipid'},
-			{id: 'did-hacera', name: 'did:hcr'},
-			{id: 'did-elem', name: 'did:elem'},
-			{id: 'did-neoid', name: 'did:neoid'},
-			{id: 'did-github', name: 'did:github'},
-			{id: 'did-ccp', name: 'did:ccp'},
-			{id: 'did-work', name: 'did:work'},
-			{id: 'dns-did', name: 'dns-did'}
+			{name: 'did-btcr'},
+			{name: 'did-sov'},
+			{name: 'did-v1'},
+			{name: 'did-uport'},
+			{name: 'did-jolo'},
+			{name: 'did-stack'},
+			{name: 'did-erc725'},
+			{name: 'did-ipid'},
+			{name: 'did-hcr'},
+			{name: 'did-elem'},
+			{name: 'did-neoid'},
+			{name: 'did-github'},
+			{name: 'did-ccp'},
+			{name: 'did-work'},
+			{name: 'dns-did'}
 		] };
 	}
 

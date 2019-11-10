@@ -12,8 +12,8 @@ export class Drivers extends Component {
 	}
 
 	render() {
-		const drivers = this.props.drivers.map((driver) =>
-			<Driver key={driver.id} id={driver.id} />
+		const drivers = this.props.drivers.map((driver, i) =>
+			<Driver key={i} name={driver.name} />
 		);
 		return (
 			<Menu className='drivers'>

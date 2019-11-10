@@ -11,7 +11,7 @@ export class Driver extends Component {
 	render() {
 		return (
 			<Item className="driver">
-				{this.props.id}
+				{this.props.name}
 			</Item>
 		);
 	}
