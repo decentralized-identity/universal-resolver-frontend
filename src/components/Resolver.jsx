@@ -18,8 +18,6 @@ export class Resolver extends Component {
 			'did:sov:WRfXPg8dantKVubE3HX8pw',
 			'did:sov:CYQLsccvwhMTowprMjGjQ6',
 			'did:sov:builder:VbPQNHsvoLZdaNU7fTBeFx',
-			'did:sov:WRfXPg8dantKVubE3HX8pw;version-time=123',
-			'did:sov:WRfXPg8dantKVubE3HX8pw;version-time=127',
 			'did:btcr:xz35-jznz-q6mr-7q6',
 			'did:btcr:xkrn-xz7q-q0mx-4cl',
 			'did:btcr:x705-jznz-qwvq-0uw',
