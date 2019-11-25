@@ -10,7 +10,6 @@ export class ResolverInput extends Component {
 		super(props)
 		const did = this.props.did ? this.props.did : this.props.examples[0];
 		this.state = { input: did, example: '' };
-		this.onChangeInput = this.onChangeInput.bind(this);
 	}
 
 	resolve() {
@@ -73,7 +72,7 @@ export class ResolverInput extends Component {
 		const examples = this.props.examples.map((example) => ({ text: example, value: example }));
 		return (
 			<Item className="resolver-input">
-				<Input label='did-url' value={this.state.input} onChange={this.onChangeInput} />
+				<Input label='did-url' value={this.state.input} onChange={this.onChangeInput.bind(this)} />
 				<Button primary onClick={this.onClickResolve.bind(this)}>Resolve</Button>
 				<Button secondary onClick={this.onClickClear.bind(this)}>Clear</Button>
 				<Dropdown placeholder='Examples' selection options={examples} value={this.state.example} onChange={this.onChangeExample.bind(this)} />
