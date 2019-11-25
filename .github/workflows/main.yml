@@ -13,5 +13,7 @@ jobs:
       uses: actions/setup-node@master
       with:
         version: 10.x
+    - name: npm install
+      run: npm install
     - name: npm run build
       run: npm run build
