@@ -23,5 +23,5 @@ Following command will run the frontend on your local machine at http://localhos
 Production build and creating & runnig a docker container
 
     npm run build
-    docker build -f ./docker/Dockerfile . -t phil21/uniresolver-frontend  
-    docker run -p 80:80 phil21/uniresolver-frontend
+    docker build -f ./docker/Dockerfile . -t universalresolver/uni-resolver-frontend 
+    docker run -p 80:80 universalresolver/uni-resolver-frontend

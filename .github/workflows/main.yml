@@ -23,4 +23,4 @@ jobs:
         DOCKER_USERNAME: ${{secrets.DOCKER_USERNAME}}
         DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
         DOCKER_FILE: docker/Dockerfile
-        CONTAINER_TAG: phil21/uni-resolver-frontend:latest
+        CONTAINER_TAG: universalresolver/uni-resolver-frontend:latest
