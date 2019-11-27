@@ -1,0 +1,26 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@master
+    - name: Set Node.js 10.x
+      uses: actions/setup-node@master
+      with:
+        version: 10.x
+    - name: npm install
+      run: npm install
+    - name: npm run build
+      run: npm run build
+    - name: Docker Build and Push
+      uses: philpotisk/github-action-docker-build-push@master
+      env:
+        DOCKER_USERNAME: ${{secrets.DOCKER_USERNAME}}
+        DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
+        DOCKER_FILE: docker/Dockerfile
+        CONTAINER_TAG: universalresolver/uni-resolver-frontend:latest
