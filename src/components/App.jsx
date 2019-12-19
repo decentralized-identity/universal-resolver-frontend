@@ -25,6 +25,8 @@ export class App extends Component {
 			{name: 'did-hcr'},
 			{name: 'did-ccp'},
 			{name: 'did-work'},
+			{name: 'did-ont'},
+			{name: 'did-kilt'},
 			{name: 'dns-did'}
 		] };
 	}

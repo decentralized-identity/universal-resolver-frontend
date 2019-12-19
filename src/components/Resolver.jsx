@@ -39,6 +39,8 @@ export class Resolver extends Component {
 			'did:hcr:0f674e7e-4b49-4898-85f6-96176c1e30de',
 			'did:ccp:ceNobbK6Me9F5zwyE3MKY88QZLw',
 			'did:work:2UUHQCd4psvkPLZGnWY33L',
+			'did:ont:AN5g6gz9EoQ3sCNu7514GEghZurrktCMiH',
+			'did:kilt:5CtPYoDuQQFLe1JU5F8KHLXkKaWxLkKH1dBAfHrUU8SoxASr',
 			'did:web:uport.me',
 			'ssi.labs.nic.at'
 		];
