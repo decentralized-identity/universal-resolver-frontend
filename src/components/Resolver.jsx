@@ -40,7 +40,7 @@ export class Resolver extends Component {
 			'did:ccp:ceNobbK6Me9F5zwyE3MKY88QZLw',
 			'did:work:2UUHQCd4psvkPLZGnWY33L',
 			'did:ont:AN5g6gz9EoQ3sCNu7514GEghZurrktCMiH',
-			'did:kilt:5CtPYoDuQQFLe1JU5F8KHLXkKaWxLkKH1dBAfHrUU8SoxASr',
+			'did:kilt:5CDct4QDpQYfAVDrskNuiEdXyiE38oPfTHEJ65ZLSpz9WasE',
 			'did:web:uport.me',
 			'ssi.labs.nic.at'
 		];
