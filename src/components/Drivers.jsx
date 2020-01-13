@@ -16,11 +16,18 @@ export class Drivers extends Component {
 			<Driver key={i} name={driver.name} />
 		);
 		return (
-			<Menu className='drivers'>
+			<>
 				<ConfigurationButton />
-				{drivers}
-				<Item><a target="_blank" href="https://github.com/decentralized-identity/universal-resolver/blob/master/docs/driver-development.md">Add your driver?</a></Item>
-			</Menu>
+				<div className="drivers-container">
+					<div className="drivers-container-label">
+						Supported methods:
+					</div>
+					<div className="drivers">
+						{drivers}
+						<a target="_blank" href="https://github.com/decentralized-identity/universal-resolver/blob/master/docs/driver-development.md">+ Add your driver?</a>
+					</div>
+				</div>
+			</>
 		);
 	}
 }
