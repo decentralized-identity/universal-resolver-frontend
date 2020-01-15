@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack --config webpack.prod.js -p",
-    "dev": "webpack-dev-server --config webpack.dev.js --hot --inline --port 7080"
+    "dev": "webpack-dev-server --config webpack.dev.js --hot --inline --port 7081"
   },
   "keywords": [
     "DID"
