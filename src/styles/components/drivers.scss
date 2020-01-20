@@ -2,4 +2,16 @@
 @import 'components/driver';
 
 .drivers {
+    column-count: 7;
+}
+
+.drivers-container {
+    display: flex;
+    margin: 20px 0 40px 0;
+}
+
+.drivers-container-label {
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-right: 40px;
 }

@@ -27,7 +27,6 @@ export class App extends Component {
 			{name: 'did-work'},
 			{name: 'did-ont'},
 			{name: 'did-kilt'},
-			{name: 'dns-did'}
 		] };
 	}
 
@@ -42,8 +41,8 @@ export class App extends Component {
 		}
 		return (
 			<div className="app">
-				<Drivers drivers={this.state.drivers} />
 				<Heading />
+				<Drivers drivers={this.state.drivers} />
 				<Resolver did={did} />
 				<Footer />
 			</div>
