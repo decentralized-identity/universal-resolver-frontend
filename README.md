@@ -14,7 +14,7 @@ Install all dependencies
 
 ## Running in Dev
 
-Following command will run the frontend on your local machine at http://localhost:7080/
+Following command will run the frontend on your local machine at http://localhost:7081/
 
     npm run dev
 
