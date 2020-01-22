@@ -17,6 +17,7 @@ build-master:
 build:
   stage: build
   script:
+    - docker run -v "$PWD":/usr/src/app -w /usr/src/app node:alpine sh -c 'npm install && npm run build'
     - docker build -f ./docker/Dockerfile --pull -t "$CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG" .
     - docker push "$CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG"
   except:
