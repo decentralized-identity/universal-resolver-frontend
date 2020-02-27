@@ -25,7 +25,7 @@ export class Resolver extends Component {
 			'did:btcr:xkyt-fzzq-q4wq-f2d',
 			'did:btcr:xyv2-xzpq-q9wa-p7t',
 			'did:btcr:xxcl-lzpq-q83a-0d5',
-			'did:v1:test:nym:z6MkuYhA5TN5XGyvFhjhLjBkJ19hY2HnQgwe7h5q1NkK5bjf',
+			'did:v1:test:nym:z6MkgF4uJbLMoUin2uKaBf4Jb1F7SHzuALE8Ldq8FPPpHE9t',
 			'did:ethr:0xE6Fe788d8ca214A080b0f6aC7F48480b2AEfa9a6',
 			'did:nacl:Md8JiMIwsapml_FtQ2ngnGftNP5UmVCAUuhnLyAsPxI',
 			'did:jolo:1fb352353ff51248c5104b407f9c04c3666627fcf5a167d693c9fc84b75964e2',
