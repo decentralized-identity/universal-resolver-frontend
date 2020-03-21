@@ -20,7 +20,7 @@ Following command will run the frontend on your local machine at http://localhos
 
 ## Running in Prod
 
-Production build and creating & runnig a docker container
+Production build and creating & runnig a docker container. The frontend will be accessible at http://localhost:80/
 
     npm run build
     docker build -f ./docker/Dockerfile . -t universalresolver/uni-resolver-frontend 
