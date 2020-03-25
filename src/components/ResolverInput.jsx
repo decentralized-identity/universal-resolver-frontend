@@ -47,7 +47,10 @@ export class ResolverInput extends Component {
 	}
 
 	componentDidMount() {
-		if (this.props.did) this.resolve();
+		if (this.props.did) {
+			this.props.onLoading();
+			this.resolve();
+		}
 	}
 
 	onClickResolve() {
