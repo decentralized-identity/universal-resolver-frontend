@@ -29,7 +29,8 @@ export class App extends Component {
 			{name: 'did:work'},
 			{name: 'did:ont'},
 			{name: 'did:kilt'},
-			{name: 'did:evan'}
+			{name: 'did:evan'},
+			{name: 'did:echo'}
 		] };
 	}
 
