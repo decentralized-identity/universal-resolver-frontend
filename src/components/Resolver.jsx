@@ -44,7 +44,10 @@ export class Resolver extends Component {
 			'did:web:did.or13.io',
 			'ssi.labs.nic.at',
 			'did:evan:testcore:0x126E901F6F408f5E260d95c62E7c73D9B60fd734',
-			'did:echo:1.1.25.0'
+			'did:echo:1.1.25.0',
+			'did:factom:testnet:6aa7d4afe4932885b5b6e93accb5f4f6c14bd1827733e05e3324ae392c0b2764',
+			'did:dock:5FXqofpV7dsuki925U1dSzDvBuQbaci5yWTQGVWRQ7bdQP5p',
+			'did:abt:z116ygT18P67xBp3scBtZLU6xVoDy268bgnY'
 		];
 	}
 
