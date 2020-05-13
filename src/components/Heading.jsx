@@ -10,7 +10,7 @@ export class Heading extends Component {
 		return (
 			<Segment className='heading'>
 				<WarningButton />
-				<Image src='images/logo.jpg' />
+				<Image src='images/logo.jpg' alt={'DIF Universal Resolver'}/>
 			</Segment>
 		);
 	}

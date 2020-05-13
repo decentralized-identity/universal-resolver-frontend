@@ -33,9 +33,11 @@ export class ConfigurationButton extends Component {
 
 	render() {
 		const button = (
-			<Button secondary onClick={this.onClick.bind(this)} className="configuration-button">See configuration</Button>
+			<h1>
+				<Button secondary onClick={this.onClick.bind(this)} className="configuration-button">See configuration</Button>
+			</h1>
 		);
-		const drivers = this.state.drivers == '' ? '' : JSON.stringify(this.state.drivers, null, 2);
+		const drivers = this.state.drivers === '' ? '' : JSON.stringify(this.state.drivers, null, 2);
 		return (
 			<Modal trigger={button}>
 				<Modal.Header>Configuration</Modal.Header>
