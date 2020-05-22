@@ -69,10 +69,6 @@ export class ResolverInput extends Component {
 		this.props.onClear();
 	}
 
-	onQrCode() {
-
-	}
-
 	onChangeExample(e, data) {
 		this.setState({ input: data.value });
 		this.setState({ example: '' });
@@ -90,7 +86,7 @@ export class ResolverInput extends Component {
 				<Button primary onClick={this.onClickResolve.bind(this)}>Resolve</Button>
 				<Button secondary onClick={this.onClickClear.bind(this)}>Clear</Button>
 				<Button secondary onClick={this.togglePop}>QR Code</Button>
-				{this.state.showQrCode ? <QrCodePopUp toggle={this.togglePop} /> : null}
+				{this.state.showQrCode ? <QrCodePopUp toggle={this.togglePop} did={this.state.input} /> : null}
 				<Dropdown placeholder='Examples' selection options={examples} value={this.state.example} onChange={this.onChangeExample.bind(this)} />
 			</Item>
 		);
