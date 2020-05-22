@@ -1,0 +1,57 @@
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(#5b1492, #882973, #ce7eb5);
+}
+
+.btn {
+  text-align: center;
+  position: absolute;
+  top: 30%;
+  left: 42%;
+  zoom: 1.5;
+}
+
+button {
+  border-radius: 10px;
+  background-color: grey;
+  outline: none;
+}
+
+button:hover {
+  background-color: white;
+}
+
+.modal {
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+.modal_content {
+  background-color: white;
+  position: absolute;
+  top: 20%;
+  left: 30%;
+  width: 40%;
+  padding: 20px;
+  border-radius: 5px;
+  border: 2px solid black;
+}
+
+.close {
+  color: Black;
+  float: right;
+}
+
+.close:hover {
+  color: cyan;
+  cursor: pointer;
+}
