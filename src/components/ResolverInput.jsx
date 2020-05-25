@@ -3,21 +3,14 @@ import { Router, Route } from 'react-router';
 import axios from 'axios';
 
 import { Item, Column, Input, Button, Dropdown } from 'semantic-ui-react'
-import { QrCodePopUp } from "./QrCodePopUp";
 
 export class ResolverInput extends Component {
 
 	constructor(props) {
-		super(props)
+		super(props);
 		const did = this.props.did ? this.props.did : this.props.examples[0];
-		this.state = { input: did, example: '', showQrCode: false };
+		this.state = { input: did, example: '' };
 	}
-
-	togglePop = () => {
-		this.setState({
-			showQrCode: !this.state.showQrCode
-		});
-	};
 
 	resolve() {
 		axios
@@ -85,8 +78,6 @@ export class ResolverInput extends Component {
 				<Input label='did-url' value={this.state.input} onChange={this.onChangeInput.bind(this)} />
 				<Button primary onClick={this.onClickResolve.bind(this)}>Resolve</Button>
 				<Button secondary onClick={this.onClickClear.bind(this)}>Clear</Button>
-				<Button secondary onClick={this.togglePop}>QR Code</Button>
-				{this.state.showQrCode ? <QrCodePopUp toggle={this.togglePop} did={this.state.input} /> : null}
 				<Dropdown placeholder='Examples' selection options={examples} value={this.state.example} onChange={this.onChangeExample.bind(this)} />
 			</Item>
 		);

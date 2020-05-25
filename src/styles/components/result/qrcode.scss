@@ -7,9 +7,9 @@
 
 .modal_content {
   background-color: white;
-  position: absolute;
-  left: 50%;
-  width: 10%;
+  position: fixed;
+  right: 50px;
+  bottom: 50px;
   padding: 20px;
   border-radius: 5px;
   border: 2px solid black;

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import { Segment, Item, Card, Divider } from 'semantic-ui-react'
 
+import QrCode from "./QrCode";
 import DidUrl from './DidUrl';
 import DidRedirect from './DidRedirect';
 import Service from './Service';
@@ -10,6 +11,10 @@ import PublicKey from './PublicKey';
 export class DidResult extends Component {
 
 	render() {
+
+		var qrcode = (
+			<QrCode did={this.props.resolverMetadata.didUrl.did} />
+		);
 
 		var redirect = null;
 		if (this.props.methodMetadata.redirect) redirect = (
@@ -111,6 +116,7 @@ export class DidResult extends Component {
 
 		return (
 			<div className='did-result'>
+				{qrcode}
 				{redirect}
 				<Item.Group>
 					<Item>
