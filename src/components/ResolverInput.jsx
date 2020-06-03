@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Router, Route } from 'react-router';
 import axios from 'axios';
 
-import { Item, Column, Input, Button, Dropdown } from 'semantic-ui-react'
+import { Item, Input, Button, Dropdown } from 'semantic-ui-react'
 
 export class ResolverInput extends Component {
 
@@ -14,7 +14,7 @@ export class ResolverInput extends Component {
 
 	resolve() {
 		axios
-			.get(env.backendUrl + '1.0/identifiers/' + encodeURIComponent(this.state.input))
+			.get(window._env_.backendUrl + '1.0/identifiers/' + encodeURIComponent(this.state.input))
 			.then(response => {
 				const didDocument = response.data.didDocument;
 				const resolverMetadata = response.data.resolverMetadata;
