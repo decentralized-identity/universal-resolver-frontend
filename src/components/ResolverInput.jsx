@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Router, Route } from 'react-router';
 import axios from 'axios';
 
 import { Item, Input, Button, Dropdown } from 'semantic-ui-react'
