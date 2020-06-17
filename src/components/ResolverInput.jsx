@@ -7,8 +7,7 @@ export class ResolverInput extends Component {
 
 	constructor(props) {
 		super(props);
-		const did = this.props.did ? this.props.did : this.props.examples[0];
-		this.state = { input: did, example: '' };
+		this.state = { input: this.props.did, example: '' };
 	}
 
 	resolve() {
@@ -46,7 +45,7 @@ export class ResolverInput extends Component {
 	}
 
 	componentDidMount() {
-		if (this.props.did) {
+		if (this.props.autoResolve) {
 			this.props.onLoading();
 			this.resolve();
 		}
