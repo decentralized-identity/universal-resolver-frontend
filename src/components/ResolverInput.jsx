@@ -12,7 +12,7 @@ export class ResolverInput extends Component {
 
 	resolve() {
 		axios
-			.get(window._env_.backendUrl + '1.0/identifiers/' + encodeURIComponent(this.state.input))
+			.get(window._env_.backendUrl + '/1.0/identifiers/' + encodeURIComponent(this.state.input))
 			.then(response => {
 				const didDocument = response.data.didDocument;
 				const resolverMetadata = response.data.resolverMetadata;
