@@ -33,7 +33,10 @@ export class App extends Component {
 			{name: 'did:echo'},
 			{name: 'did:factom'},
 			{name: 'did:dock'},
-			{name: 'did:abt'}
+			{name: 'did:abt'},
+			{name: 'did:sirius'},
+			{name: 'did:mpg'},
+			{name: 'did:io'},
 		];
 		this.examples = [
 			'did:sov:WRfXPg8dantKVubE3HX8pw',
@@ -68,7 +71,11 @@ export class App extends Component {
 			'did:echo:1.1.25.0',
 			'did:factom:testnet:6aa7d4afe4932885b5b6e93accb5f4f6c14bd1827733e05e3324ae392c0b2764',
 			'did:dock:5FXqofpV7dsuki925U1dSzDvBuQbaci5yWTQGVWRQ7bdQP5p',
-			'did:abt:z116ygT18P67xBp3scBtZLU6xVoDy268bgnY'
+			'did:abt:z116ygT18P67xBp3scBtZLU6xVoDy268bgnY',
+			'did:sirius:2VhYrbauc2cCx9ZpCp5wrDtK7HKf7jrsvgoKBD4KgK',
+			'did:mpg:7PGGnRdvKKFftSXU3Jw75Vk5npfg',
+			'did:io:0x476c81C27036D05cB5ebfe30ae58C23351a61C4A',
+
 		];
 		this.examples.sort();
 		this.state = { drivers: this.drivers };
