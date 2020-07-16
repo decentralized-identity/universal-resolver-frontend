@@ -37,6 +37,7 @@ export class App extends Component {
 			{name: 'did:sirius'},
 			{name: 'did:mpg'},
 			{name: 'did:io'},
+			{name: 'did:trust'},
 		];
 		this.examples = [
 			'did:sov:WRfXPg8dantKVubE3HX8pw',
@@ -75,6 +76,7 @@ export class App extends Component {
 			'did:sirius:2VhYrbauc2cCx9ZpCp5wrDtK7HKf7jrsvgoKBD4KgK',
 			'did:mpg:7PGGnRdvKKFftSXU3Jw75Vk5npfg',
 			'did:io:0x476c81C27036D05cB5ebfe30ae58C23351a61C4A',
+			'did:trust:cert.EiBJ6qjVXgJ-A8xnaUiu4rtLDgeobQYgRWjMV49aCak4HQ',
 
 		];
 		this.examples.sort();
