@@ -5,4 +5,7 @@ ADD ./src/images /usr/share/nginx/html/images
 ADD ./src/favicon.ico /usr/share/nginx/html/
 COPY ./src/env.js /usr/share/nginx/html/
 COPY ./src/env.template.js /usr/share/nginx/html/
-CMD ["/bin/sh",  "-c",  "envsubst < /usr/share/nginx/html/env.template.js > /usr/share/nginx/html/env.js && exec nginx -g 'daemon off;'"]
+
+COPY ./docker/entrypoint.sh /
+RUN chmod +x /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]

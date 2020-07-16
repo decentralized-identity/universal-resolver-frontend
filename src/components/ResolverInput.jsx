@@ -11,8 +11,10 @@ export class ResolverInput extends Component {
 	}
 
 	resolve() {
+		let host = 'https://uniresolver.io'
+		if (window._env_ !== undefined && window._env_.backendUrl !== undefined) host = window._env_.backendUrl
 		axios
-			.get(window._env_.backendUrl + '1.0/identifiers/' + encodeURIComponent(this.state.input))
+			.get( host + '/1.0/identifiers/' + encodeURIComponent(this.state.input))
 			.then(response => {
 				const didDocument = response.data.didDocument;
 				const resolverMetadata = response.data.resolverMetadata;
