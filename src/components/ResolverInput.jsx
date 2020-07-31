@@ -11,7 +11,7 @@ export class ResolverInput extends Component {
 	}
 
 	resolve() {
-		let host = 'https://uniresolver.io'
+		let host = 'https://dev.uniresolver.io'
 		if (window._env_ !== undefined && window._env_.backendUrl !== undefined) host = window._env_.backendUrl
 		axios
 			.get( host + '/1.0/identifiers/' + encodeURIComponent(this.state.input))

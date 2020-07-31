@@ -1,3 +1,3 @@
 window._env_ = {
-  backendUrl: "https://uniresolver.io"
+  backendUrl: "https://dev.uniresolver.io"
 }
