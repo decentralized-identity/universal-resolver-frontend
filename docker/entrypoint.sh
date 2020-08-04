@@ -7,7 +7,7 @@ then
   echo "Substituting backendUrl with ${BACKEND_URL}"
   envsubst < /usr/share/nginx/html/env.template.js > /usr/share/nginx/html/env.js
 else
-  echo "Using default URL https://uniresolver.io"
+  echo "Using default URL https://dev.uniresolver.io"
 fi
 
 nginx -g 'daemon off;'
