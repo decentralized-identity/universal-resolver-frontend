@@ -38,6 +38,7 @@ export class App extends Component {
 			{name: 'did:mpg'},
 			{name: 'did:io'},
 			{name: 'did:trust'},
+			{name: 'did:bba'},
 		];
 		this.examples = [
 			'did:sov:WRfXPg8dantKVubE3HX8pw',
@@ -77,6 +78,8 @@ export class App extends Component {
 			'did:mpg:7PGGnRdvKKFftSXU3Jw75Vk5npfg',
 			'did:io:0x476c81C27036D05cB5ebfe30ae58C23351a61C4A',
 			'did:trust:cert.EiBJ6qjVXgJ-A8xnaUiu4rtLDgeobQYgRWjMV49aCak4HQ',
+			'did:bba:47ef0798566073ea302b8178943aaa83f227614d6f36a4d2bcd92993bbed6044',
+			'did:bba:t:45e6df15dc0a7d91dcccd24fda3b52c3983a214fb0eed0938321c11ec99403cf',
 
 		];
 		this.examples.sort();
