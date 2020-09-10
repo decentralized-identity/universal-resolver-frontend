@@ -13,8 +13,11 @@ export class ConfigurationButton extends Component {
 
 	onClick() {
 //		this.props.onLoading();
+		let host = '';
+		if (env.backendUrl !== 'docker') host = env.backendUrl
+		else if (window._env_ !== undefined && window._env_.backendUrl !== undefined) host = window._env_.backendUrl
 		axios
-			.get(env.backendUrl + '1.0/properties/')
+			.get(host + '1.0/properties/')
 			.then(response => {
 				this.setState({ drivers: response.data });
 			})

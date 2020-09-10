@@ -11,9 +11,9 @@ export class ResolverInput extends Component {
 	}
 
 	resolve() {
-		// Specifying the default value here is needed to run the app in dev mode without docker
-		let host = 'https://dev.uniresolver.io'
-		if (window._env_ !== undefined && window._env_.backendUrl !== undefined) host = window._env_.backendUrl
+		let host = '';
+		if (env.backendUrl !== 'docker') host = env.backendUrl
+		else if (window._env_ !== undefined && window._env_.backendUrl !== undefined) host = window._env_.backendUrl
 		axios
 			.get( host + '/1.0/identifiers/' + encodeURIComponent(this.state.input))
 			.then(response => {
