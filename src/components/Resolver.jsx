@@ -6,14 +6,14 @@ import ResolverInput from './ResolverInput';
 import Error from './Error';
 import DidResult from './result/DidResult';
 import DidDocument from './result/DidDocument';
-import ResolverMetadata from './result/ResolverMetadata';
-import MethodMetadata from './result/MethodMetadata';
+import DidResolutionMetadata from './result/DidResolutionMetadata';
+import DidDocumentMetadata from './result/DidDocumentMetadata';
 
 export class Resolver extends Component {
 
 	constructor (props) {
 		super(props);
-		this.state = { loading: false, didDocument: null, resolverMetadata: null, methodMetadata: null, error: null };
+		this.state = { loading: false, didDocument: null, didResolutionMetadata: null, didDocumentMetadata: null, error: null };
 	}
 
 	render() {
@@ -21,11 +21,11 @@ export class Resolver extends Component {
 		if (this.state.error) resultOrError = (
 			<Error text={this.state.error} />
 			);
-		else if (this.state.didDocument || this.state.resolverMetadata) resultOrError = (
+		else if (this.state.didDocument || this.state.didResolutionMetadata) resultOrError = (
 			<DidResult
 				didDocument={this.state.didDocument}
-				resolverMetadata={this.state.resolverMetadata}
-				methodMetadata={this.state.methodMetadata} />
+				didResolutionMetadata={this.state.didResolutionMetadata}
+				didDocumentMetadata={this.state.didDocumentMetadata} />
 			);
 
 		return (
@@ -49,15 +49,15 @@ export class Resolver extends Component {
 						<DidDocument
 							didDocument={this.state.didDocument} />
 					</Tab.Pane> },
-					{ menuItem: 'RESOLVER METADATA', render: () =>
+					{ menuItem: 'RESOLUTION METADATA', render: () =>
 					<Tab.Pane loading={this.state.loading}>
-						<ResolverMetadata
-							resolverMetadata={this.state.resolverMetadata} />
+						<DidResolutionMetadata
+							didResolutionMetadata={this.state.didResolutionMetadata} />
 					</Tab.Pane> },
-					{ menuItem: 'METHOD METADATA', render: () =>
+					{ menuItem: 'DOCUMENT METADATA', render: () =>
 					<Tab.Pane loading={this.state.loading}>
-						<MethodMetadata
-							methodMetadata={this.state.methodMetadata} />
+						<DidDocumentMetadata
+							didDocumentMetadata={this.state.didDocumentMetadata} />
 					</Tab.Pane> }
 				]} />
 			</Segment>
@@ -65,19 +65,19 @@ export class Resolver extends Component {
 	}
 
 	onClear() {
-		this.setState({ loading: false, didDocument: null, resolverMetadata: null, methodMetadata: null, error: null });
+		this.setState({ loading: false, didDocument: null, didResolutionMetadata: null, didDocumentMetadata: null, error: null });
 	}
 
 	onLoading() {
-		this.setState({ loading: true, didDocument: null, resolverMetadata: null, methodMetadata: null, error: null });
+		this.setState({ loading: true, didDocument: null, didResolutionMetadata: null, didDocumentMetadata: null, error: null });
 	}
 
-	onResult(didDocument, resolverMetadata, methodMetadata) {
-		this.setState({ loading: false, didDocument: didDocument, resolverMetadata: resolverMetadata, methodMetadata: methodMetadata, error: null });
+	onResult(didDocument, didResolutionMetadata, didDocumentMetadata) {
+		this.setState({ loading: false, didDocument: didDocument, didResolutionMetadata: didResolutionMetadata, didDocumentMetadata: didDocumentMetadata, error: null });
 	}
 
-	onError(error, didDocument, resolverMetadata, methodMetadata) {
-		this.setState({ loading: false, didDocument: didDocument, resolverMetadata: resolverMetadata, methodMetadata: methodMetadata, error: error });
+	onError(error, didDocument, didResolutionMetadata, didDocumentMetadata) {
+		this.setState({ loading: false, didDocument: didDocument, didResolutionMetadata: didResolutionMetadata, didDocumentMetadata: didDocumentMetadata, error: error });
 	}
 }
 
