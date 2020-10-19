@@ -70,7 +70,7 @@ export class App extends Component {
 			'did:work:2UUHQCd4psvkPLZGnWY33L',
 			'did:ont:AN5g6gz9EoQ3sCNu7514GEghZurrktCMiH',
 			'did:kilt:5CqJa4Ct7oMeMESzehTiN9fwYdGLd7tqeirRMpGDh2XxYYyx',
-			'did:web:data-vault.eu:u:zi4xgcHtYo7fh_KAURaO1beG2v6WN9ImVnQ30CBDEJjLrw',
+			'did:web:did.actor:alice',
 			'ssi.labs.nic.at',
 			'did:evan:testcore:0x126E901F6F408f5E260d95c62E7c73D9B60fd734',
 			'did:echo:1.1.25.0',
