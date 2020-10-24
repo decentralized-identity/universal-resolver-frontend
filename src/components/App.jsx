@@ -38,6 +38,10 @@ export class App extends Component {
 			{name: 'did:mpg'},
 			{name: 'did:io'},
 			{name: 'did:trust'},
+			{name: 'did:bba'},
+			{name: 'did:cy'},
+			{name: 'did:bid'},
+			{name: 'did:schema'},
 		];
 		this.examples = [
 			'did:sov:WRfXPg8dantKVubE3HX8pw',
@@ -66,7 +70,7 @@ export class App extends Component {
 			'did:work:2UUHQCd4psvkPLZGnWY33L',
 			'did:ont:AN5g6gz9EoQ3sCNu7514GEghZurrktCMiH',
 			'did:kilt:5CqJa4Ct7oMeMESzehTiN9fwYdGLd7tqeirRMpGDh2XxYYyx',
-			'did:web:did.or13.io',
+			'did:web:did.actor:alice',
 			'ssi.labs.nic.at',
 			'did:evan:testcore:0x126E901F6F408f5E260d95c62E7c73D9B60fd734',
 			'did:echo:1.1.25.0',
@@ -77,7 +81,10 @@ export class App extends Component {
 			'did:mpg:7PGGnRdvKKFftSXU3Jw75Vk5npfg',
 			'did:io:0x476c81C27036D05cB5ebfe30ae58C23351a61C4A',
 			'did:trust:cert.EiBJ6qjVXgJ-A8xnaUiu4rtLDgeobQYgRWjMV49aCak4HQ',
-
+			'did:bba:t:45e6df15dc0a7d91dcccd24fda3b52c3983a214fb0eed0938321c11ec99403cf',
+			'did:cy:2nnn7H7RJLLhFPoGyzxPCLzuhrzJ',
+			'did:bid:6cc796b8d6e2fbebc9b3cf9e',
+			'did:schema:public-ipfs:xsd:QmUQAxKQ5sbWWrcBZzwkThktfUGZvuPQyTrqMzb3mZnLE5',
 		];
 		this.examples.sort();
 		this.state = { drivers: this.drivers };

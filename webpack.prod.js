@@ -10,7 +10,7 @@ module.exports = merge(common, {
   },
   plugins: [
     new webpack.DefinePlugin({
-      'env.backendUrl': JSON.stringify('https://dev.uniresolver.io')
+      'env.backendUrl': JSON.stringify('')
     })
   ]
 });

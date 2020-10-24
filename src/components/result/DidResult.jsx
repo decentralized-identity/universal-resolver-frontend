@@ -6,18 +6,18 @@ import QrCode from "./QrCode";
 import DidUrl from './DidUrl';
 import DidRedirect from './DidRedirect';
 import Service from './Service';
-import PublicKey from './PublicKey';
+import VerificationMethod from './VerificationMethod';
 
 export class DidResult extends Component {
 
 	render() {
 
 		var qrcode = (
-			<QrCode did={this.props.resolverMetadata.didUrl.did} />
+			<QrCode did={this.props.didResolutionMetadata.didUrl.did} />
 		);
 
 		var redirect = null;
-		if (this.props.methodMetadata.redirect) redirect = (
+		if (this.props.didDocumentMetadata.redirect) redirect = (
 			<DidRedirect
 				redirect={this.state.redirect} />
 		);
@@ -33,7 +33,7 @@ export class DidResult extends Component {
 				id={didDocumentService.id}
 				type={didDocumentService.type}
 				serviceEndpoint={didDocumentService.serviceEndpoint}
-				selected={this.props.resolverMetadata.selectedServices ? this.props.resolverMetadata.selectedServices.includes(i) : null} />
+				selected={this.props.didResolutionMetadata.selectedServices ? this.props.didResolutionMetadata.selectedServices.includes(i) : null} />
 		);
 		if (Object.keys(servicesList).length > 0) servicesList = (
 			<Item.Description>
@@ -47,36 +47,36 @@ export class DidResult extends Component {
 			</Item.Description>
 		);
 
-		var didDocumentPublicKeys;
-		if (this.props.didDocument && Array.isArray(this.props.didDocument.publicKey)) didDocumentPublicKeys = this.props.didDocument.publicKey;
-		else if (this.props.didDocument && typeof this.props.didDocument.publicKey === 'object') didDocumentPublicKeys = Array.of(this.props.didDocument.publicKey);
-		else if (this.props.didDocument && Array.isArray(this.props.didDocument.authentication) && Array.isArray(this.props.didDocument.authentication[0].publicKey)) didDocumentPublicKeys = this.props.didDocument.authentication[0].publicKey;
-		else if (this.props.didDocument && Array.isArray(this.props.didDocument.authentication) && typeof this.props.didDocument.authentication[0].publicKey === 'object') didDocumentPublicKeys = Array.of(this.props.didDocument.authentication[0].publicKey);
-		else if (this.props.didDocument && Array.isArray(this.props.didDocument.authentication)) didDocumentPublicKeys = Array.of(this.props.didDocument.authentication[0]);
-		else didDocumentPublicKeys = Array.of();
+		var didDocumentVerificationMethods;
+		if (this.props.didDocument && Array.isArray(this.props.didDocument.verificationMethod)) didDocumentVerificationMethods = this.props.didDocument.verificationMethod;
+		else if (this.props.didDocument && typeof this.props.didDocument.verificationMethod === 'object') didDocumentVerificationMethods = Array.of(this.props.didDocument.verificationMethod);
+		else if (this.props.didDocument && Array.isArray(this.props.didDocument.authentication) && Array.isArray(this.props.didDocument.authentication[0].verificationMethod)) didDocumentVerificationMethods = this.props.didDocument.authentication[0].verificationMethod;
+		else if (this.props.didDocument && Array.isArray(this.props.didDocument.authentication) && typeof this.props.didDocument.authentication[0].verificationMethod === 'object') didDocumentVerificationMethods = Array.of(this.props.didDocument.authentication[0].verificationMethod);
+		else if (this.props.didDocument && Array.isArray(this.props.didDocument.authentication)) didDocumentVerificationMethods = Array.of(this.props.didDocument.authentication[0]);
+		else didDocumentVerificationMethods = Array.of();
 
-		var publicKeysList = didDocumentPublicKeys.map((didDocumentPublicKey, i) =>
-			<PublicKey
+		var verificationMethodsList = didDocumentVerificationMethods.map((didDocumentVerificationMethod, i) =>
+			<VerificationMethod
 				key={i}
-				id={didDocumentPublicKey.id}
-				type={didDocumentPublicKey.type}
-				publicKeyBase64={didDocumentPublicKey.publicKeyBase64}
-				publicKeyBase58={didDocumentPublicKey.publicKeyBase58}
-				publicKeyHex={didDocumentPublicKey.publicKeyHex}
-				publicKeyPem={didDocumentPublicKey.publicKeyPem}
-				publicKeyJwk={didDocumentPublicKey.publicKeyJwk}
-				publicKeyPgp={didDocumentPublicKey.publicKeyPgp}
-				ethereumAddress={didDocumentPublicKey.ethereumAddress}
-				address={didDocumentPublicKey.address}
-				selected={this.props.resolverMetadata.selectedKeys ? this.props.resolverMetadata.selectedKeys.includes(i) : null} />
+				id={didDocumentVerificationMethod.id}
+				type={didDocumentVerificationMethod.type}
+				publicKeyBase64={didDocumentVerificationMethod.publicKeyBase64}
+				publicKeyBase58={didDocumentVerificationMethod.publicKeyBase58}
+				publicKeyHex={didDocumentVerificationMethod.publicKeyHex}
+				publicKeyPem={didDocumentVerificationMethod.publicKeyPem}
+				publicKeyJwk={didDocumentVerificationMethod.publicKeyJwk}
+				publicKeyPgp={didDocumentVerificationMethod.publicKeyPgp}
+				ethereumAddress={didDocumentVerificationMethod.ethereumAddress}
+				address={didDocumentVerificationMethod.address}
+				selected={this.props.didResolutionMetadata.selectedKeys ? this.props.didResolutionMetadata.selectedKeys.includes(i) : null} />
 		);
-		if (Object.keys(publicKeysList).length > 0) publicKeysList = (
+		if (Object.keys(verificationMethodsList).length > 0) verificationMethodsList = (
 			<Item.Description>
 				<Card.Group>
-					{publicKeysList}
+					{verificationMethodsList}
 				</Card.Group>
 			</Item.Description>
-		); else publicKeysList = (
+		); else verificationMethodsList = (
 			<Item.Description>
 				(none)
 			</Item.Description>
@@ -98,16 +98,16 @@ export class DidResult extends Component {
 			</div>
 		);
 
-		const publicKeys = publicKeysList && Object.keys(publicKeysList).length > 0 ? (
+		const verificationMethods = verificationMethodsList && Object.keys(verificationMethodsList).length > 0 ? (
 			<div>
 				<Divider />
 				<Item.Group>
 					<Item>
 						<Item.Content>
 							<Item.Header>
-								Public Keys
+								Verification Methods
 							</Item.Header>
-							{publicKeysList}
+							{verificationMethodsList}
 						</Item.Content>
 					</Item>
 				</Item.Group>
@@ -125,13 +125,13 @@ export class DidResult extends Component {
 								Parser
 							</Item.Header>
 							<Item.Description>
-								<DidUrl didUrl={this.props.resolverMetadata.didUrl} />
+								<DidUrl didUrl={this.props.didResolutionMetadata.didUrl} />
 							</Item.Description>
 						</Item.Content>
 					</Item>
 				</Item.Group>
 				{services}
-				{publicKeys}
+				{verificationMethods}
 			</div>
 		);
 	}

@@ -11,16 +11,13 @@ export class ResolverInput extends Component {
 	}
 
 	resolve() {
-		let host = '';
-		if (env.backendUrl !== 'docker') host = env.backendUrl
-		else if (window._env_ !== undefined && window._env_.backendUrl !== undefined) host = window._env_.backendUrl
 		axios
-			.get( host + '/1.0/identifiers/' + encodeURIComponent(this.state.input))
+			.get( env.backendUrl + '1.0/identifiers/' + encodeURIComponent(this.state.input))
 			.then(response => {
 				const didDocument = response.data.didDocument;
-				const resolverMetadata = response.data.resolverMetadata;
-				const methodMetadata = response.data.methodMetadata;
-				this.props.onResult(didDocument, resolverMetadata, methodMetadata);
+				const didResolutionMetadata = response.data.didResolutionMetadata;
+				const didDocumentMetadata = response.data.didDocumentMetadata;
+				this.props.onResult(didDocument, didResolutionMetadata, didDocumentMetadata);
 			})
 			.catch(error => {
 				if (error.response && error.response.data) {
@@ -31,9 +28,9 @@ export class ResolverInput extends Component {
 						errorString = String(error);
 					if (typeof error.response.data === 'object') {
 						const didDocument = error.response.data.didDocument;
-						const resolverMetadata = error.response.data.resolverMetadata;
-						const methodMetadata = error.response.data.methodMetadata;
-						this.props.onError(errorString, didDocument, resolverMetadata, methodMetadata);
+						const didResolutionMetadata = error.response.data.didResolutionMetadata;
+						const didDocumentMetadata = error.response.data.didDocumentMetadata;
+						this.props.onError(errorString, didDocument, didResolutionMetadata, didDocumentMetadata);
 					} else {
 						this.props.onError(errorString + ': ' + error.response.data);
 					}

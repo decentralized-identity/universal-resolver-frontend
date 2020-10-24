@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import { Card, Icon } from 'semantic-ui-react'
 
-export class PublicKey extends Component {
+export class VerificationMethod extends Component {
 
 	render() {
 		const icon = this.props.selected ? 'key blue' : 'key';
@@ -39,4 +39,4 @@ export class PublicKey extends Component {
 	}
 }
 
-export default PublicKey;
+export default VerificationMethod;
