@@ -11,8 +11,15 @@ export class ResolverInput extends Component {
 	}
 
 	resolve() {
+		let host = '';
+
+		if (window._env_ !== undefined && window._env_.backendUrl !== undefined) host = window._env_.backendUrl
+		else host = env.backendUrl
+
+		console.log('Backend host: ', host)
+
 		axios
-			.get( env.backendUrl + '1.0/identifiers/' + encodeURIComponent(this.state.input))
+			.get( host + '1.0/identifiers/' + encodeURIComponent(this.state.input))
 			.then(response => {
 				const didDocument = response.data.didDocument;
 				const didResolutionMetadata = response.data.didResolutionMetadata;
