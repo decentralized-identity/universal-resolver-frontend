@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-import { Item, Input, Button, Dropdown } from 'semantic-ui-react'
+import { Item, Input, Button, Dropdown } from 'semantic-ui-react';
+import { determineHostName } from './utils';
 
 export class ResolverInput extends Component {
 
@@ -19,7 +20,7 @@ export class ResolverInput extends Component {
 		console.log('Backend host: ', host)
 
 		axios
-			.get( host + '1.0/identifiers/' + encodeURIComponent(this.state.input))
+			.get( determineHostName() + '1.0/identifiers/' + encodeURIComponent(this.state.input))
 			.then(response => {
 				const didDocument = response.data.didDocument;
 				const didResolutionMetadata = response.data.didResolutionMetadata;
