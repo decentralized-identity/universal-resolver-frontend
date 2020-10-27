@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-import { Item, Button, Modal, Header } from 'semantic-ui-react'
+import { Button, Modal } from 'semantic-ui-react'
 import { Highlight } from 'react-fast-highlight';
+import { determineHostName } from './utils';
 
 export class ConfigurationButton extends Component {
 
@@ -13,11 +14,8 @@ export class ConfigurationButton extends Component {
 
 	onClick() {
 //		this.props.onLoading();
-		let host = '';
-		if (env.backendUrl !== 'docker') host = env.backendUrl
-		else if (window._env_ !== undefined && window._env_.backendUrl !== undefined) host = window._env_.backendUrl
 		axios
-			.get(host + '1.0/properties/')
+			.get( determineHostName() + '1.0/properties/')
 			.then(response => {
 				this.setState({ drivers: response.data });
 			})
