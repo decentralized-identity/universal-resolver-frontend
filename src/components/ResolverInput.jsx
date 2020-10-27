@@ -12,13 +12,6 @@ export class ResolverInput extends Component {
 	}
 
 	resolve() {
-		let host = '';
-
-		if (window._env_ !== undefined && window._env_.backendUrl !== undefined) host = window._env_.backendUrl
-		else host = env.backendUrl
-
-		console.log('Backend host: ', host)
-
 		axios
 			.get( determineHostName() + '1.0/identifiers/' + encodeURIComponent(this.state.input))
 			.then(response => {
