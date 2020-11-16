@@ -1,0 +1,29 @@
+name: Build release tag
+
+on:
+  push:
+    branches:
+      - release-0.3.x
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@master
+      - name: Set Node.js 10.x
+        uses: actions/setup-node@master
+        with:
+          version: 10.x
+      - name: npm install
+        run: npm install
+      - name: npm run build
+        run: npm run build
+      - name: Docker Build and Push
+        uses: danubetech/github-action-docker-build-push@master
+        env:
+          DOCKER_USERNAME: ${{secrets.DOCKER_USERNAME}}
+          DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
+          DOCKER_FILE: docker/Dockerfile
+          CONTAINER_TAG: universalresolver/universal-resolver-frontend:0.3.0

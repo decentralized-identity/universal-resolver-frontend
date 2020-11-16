@@ -1,4 +1,4 @@
-name: CI
+name: Build latest tag
 
 on:
   push:
@@ -21,7 +21,7 @@ jobs:
     - name: npm run build
       run: npm run build
     - name: Docker Build and Push
-      uses: philpotisk/github-action-docker-build-push@master
+      uses: danubetech/github-action-docker-build-push@master
       env:
         DOCKER_USERNAME: ${{secrets.DOCKER_USERNAME}}
         DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
