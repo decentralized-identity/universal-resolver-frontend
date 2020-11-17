@@ -50,9 +50,9 @@ export class DidResult extends Component {
 		var didDocumentVerificationMethods;
 		if (this.props.didDocument && Array.isArray(this.props.didDocument.verificationMethod)) didDocumentVerificationMethods = this.props.didDocument.verificationMethod;
 		else if (this.props.didDocument && typeof this.props.didDocument.verificationMethod === 'object') didDocumentVerificationMethods = Array.of(this.props.didDocument.verificationMethod);
-		else if (this.props.didDocument && Array.isArray(this.props.didDocument.authentication) && Array.isArray(this.props.didDocument.authentication[0].verificationMethod)) didDocumentVerificationMethods = this.props.didDocument.authentication[0].verificationMethod;
-		else if (this.props.didDocument && Array.isArray(this.props.didDocument.authentication) && typeof this.props.didDocument.authentication[0].verificationMethod === 'object') didDocumentVerificationMethods = Array.of(this.props.didDocument.authentication[0].verificationMethod);
-		else if (this.props.didDocument && Array.isArray(this.props.didDocument.authentication)) didDocumentVerificationMethods = Array.of(this.props.didDocument.authentication[0]);
+		else if (this.props.didDocument && Array.isArray(this.props.didDocument.authentication) && this.props.didDocument.authentication.length > 0 && Array.isArray(this.props.didDocument.authentication[0].verificationMethod)) didDocumentVerificationMethods = this.props.didDocument.authentication[0].verificationMethod;
+		else if (this.props.didDocument && Array.isArray(this.props.didDocument.authentication) && this.props.didDocument.authentication.length > 0 && typeof this.props.didDocument.authentication[0].verificationMethod === 'object') didDocumentVerificationMethods = Array.of(this.props.didDocument.authentication[0].verificationMethod);
+		else if (this.props.didDocument && Array.isArray(this.props.didDocument.authentication) && this.props.didDocument.authentication.length > 0) didDocumentVerificationMethods = Array.of(this.props.didDocument.authentication[0]);
 		else didDocumentVerificationMethods = Array.of();
 
 		var verificationMethodsList = didDocumentVerificationMethods.map((didDocumentVerificationMethod, i) =>
