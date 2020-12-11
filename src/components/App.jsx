@@ -57,7 +57,6 @@ export class App extends Component {
 			'did:btcr:x705-jznz-q3nl-srs',
 			'did:btcr:xksa-czpq-qxr3-l8k',
 			'did:btcr:xkyt-fzzq-q23l-k4n',
-			'did:btcr:xyv2-xzpq-q63z-7p4',
 			'did:btcr:xxcl-lzpq-qcwz-sj2',
 			'did:v1:test:nym:z6MkgF4uJbLMoUin2uKaBf4Jb1F7SHzuALE8Ldq8FPPpHE9t',
 			'did:ethr:0xE6Fe788d8ca214A080b0f6aC7F48480b2AEfa9a6',
