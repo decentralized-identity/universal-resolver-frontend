@@ -47,6 +47,7 @@ export class App extends Component {
 			{name: 'did:ace'},
 			{name: 'did:icon'},
 			{name: 'did:vaa'},
+			{name: 'did:unisot'},
 		];
 		this.examples = [
 			'did:sov:WRfXPg8dantKVubE3HX8pw',
@@ -93,7 +94,8 @@ export class App extends Component {
 			'did:gatc:2xtSori9UQZdTqzxrkp7zqKM4Kj5B4C7',
 			'did:ace:0xf81c16a78b257c10fddf87ed4324d433317169a005ddf36a3a1ba937ba9788e3',
 			"did:icon:02:6f7a00a29deb82cb36d501d687c18bad79a8f1c154ef0c78",
-			"did:vaa:3wJVWDQWtDFx27FqvSqyo5xsTsxC"
+			"did:vaa:3wJVWDQWtDFx27FqvSqyo5xsTsxC",
+			"did:unisot:test:n1aAmTXAg4o44Z9k8YCQncEY91r3TV7WU4"
 		];
 		this.examples.sort();
 		this.state = { drivers: this.drivers };
