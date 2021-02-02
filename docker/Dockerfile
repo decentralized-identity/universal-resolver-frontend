@@ -19,10 +19,11 @@ ADD ./src/images /usr/share/nginx/html/images
 ADD ./src/favicon.ico /usr/share/nginx/html/
 COPY ./src/env.js /usr/share/nginx/html/
 COPY ./src/env.template.js /usr/share/nginx/html/
+RUN sed -i 's/listen       80/listen       7081/g' /etc/nginx/conf.d/default.conf
 
 # done
 
-EXPOSE 8080
+EXPOSE 7081
 COPY ./docker/entrypoint.sh /
 RUN chmod +x /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
