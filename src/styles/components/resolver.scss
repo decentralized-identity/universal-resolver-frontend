@@ -1,9 +1,9 @@
-@import 'components/resolver-input';
-@import 'components/error';
-@import 'components/result/did-result';
-@import 'components/result/did-document';
-@import 'components/result/did-resolution-metadata';
-@import 'components/result/did-document-metadata';
+@import 'resolver-input';
+@import 'error';
+@import 'result/did-result';
+@import 'result/did-document';
+@import 'result/did-resolution-metadata';
+@import 'result/did-document-metadata';
 
 .resolver {
 }

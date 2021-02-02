@@ -35,9 +35,5 @@ module.exports = {
             use: ['url-loader']
          }
       ]
-   },
-   devServer: {
-      contentBase: './src',
-      publicPath: '/output'
    }
 };
