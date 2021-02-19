@@ -5,7 +5,7 @@ MAINTAINER Markus Sabadello <markus@danubetech.com>
 
 # build universal-resolver-frontend
 
-ADD . /opt/universal-resolver-frontend
+ADD . /opt/universal-resolver-frontend/
 RUN cd /opt/universal-resolver-frontend && npm install && yarn run build
 
 # build image
