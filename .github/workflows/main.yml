@@ -3,7 +3,7 @@ name: Build latest tag
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   build:
