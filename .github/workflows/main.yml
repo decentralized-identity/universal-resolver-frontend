@@ -10,16 +10,12 @@ jobs:
 
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [ 10.x ]
-
     steps:
     - uses: actions/checkout@master
-    - name: Set Node.js 10.x
+    - name: Set Node.js 14.x
       uses: actions/setup-node@master
       with:
-        version: 10.x
+        version: 14.x
     - name: npm install
       run: npm install
     - name: npm run build
