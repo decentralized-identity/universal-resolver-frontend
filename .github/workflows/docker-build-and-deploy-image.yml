@@ -1,0 +1,46 @@
+name: Docker build/deploy image to Danubetech Nexus
+
+on:
+  push:
+    paths-ignore:
+      - '.gitignore'
+      - 'README.md'
+      - 'LICENSE'
+      - 'docs'
+    branches: [main]
+  workflow_dispatch:
+
+env:
+  IMAGE_NAME: universalresolver/universal-resolver-frontend
+  PATH_TO_DOCKERFILE: /docker/Dockerfile
+  BUILD_CONTEXT: $GITHUB_WORKSPACE
+
+jobs:
+  publish-image:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Import Secrets
+        uses: hashicorp/vault-action@v2.1.1
+        with:
+          url: https://vault.danubetech.com
+          token: ${{ secrets.CI_SECRET_READER_PERIODIC_TOKEN }}
+          tlsSkipVerify: true
+          secrets: |
+            ci/data/gh-workflows/dockerhub username | DOCKER_USERNAME ;
+            ci/data/gh-workflows/dockerhub password | DOCKER_PASSWORD ;
+            ci/data/gh-workflows/deployment-status slack-webhook-url | SLACK_WEBHOOK_URL
+      - name: Run build image action
+        run: docker build -f "${{ env.BUILD_CONTEXT }}${{ env.PATH_TO_DOCKERFILE }}" -t "${{ env.IMAGE_NAME }}" "${{ env.BUILD_CONTEXT }}"
+      - name: Login user to Dockerhub
+        run: echo "${{ env.DOCKER_PASSWORD }}" | docker login -u "${{ env.DOCKER_USERNAME }}" --password-stdin
+      - name: Push image to Dockerhub
+        run: docker push "${{ env.IMAGE_NAME }}"
+      - name: Slack notification
+        uses: 8398a7/action-slack@v3
+        with:
+          status: ${{ job.status }}
+          fields: repo,commit,action,eventName,ref,workflow
+        env:
+          SLACK_WEBHOOK_URL: ${{ env.SLACK_WEBHOOK_URL }}
+        if: failure()
