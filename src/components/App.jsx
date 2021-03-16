@@ -50,6 +50,7 @@ export class App extends Component {
 			{name: 'did:unisot'},
 			{name: 'did:trustbloc'},
 			{name: 'did:bitxhub'},
+			{name: 'did:solid'},
 		];
 		this.examples = [
 			'did:sov:WRfXPg8dantKVubE3HX8pw',
@@ -99,7 +100,8 @@ export class App extends Component {
 			"did:vaa:3wJVWDQWtDFx27FqvSqyo5xsTsxC",
 			"did:unisot:test:n1aAmTXAg4o44Z9k8YCQncEY91r3TV7WU4",
 			"did:trustbloc:testnet.trustbloc.dev:EiBLTZcCj6u_XsufSuLVh2zbPEREjDcu8bnPgs0XyKkfPQ",
-			"did:bitxhub:appchain001:0xc7F999b83Af6DF9e67d0a37Ee7e900bF38b3D013"
+			"did:bitxhub:appchain001:0xc7F999b83Af6DF9e67d0a37Ee7e900bF38b3D013",
+			"did:solid:DSb8Guj9tB1jvsyqrsE3Yi44hwnzrVVQc2gcS1J1dUxy"
 		];
 		this.examples.sort();
 		this.state = { drivers: this.drivers };
