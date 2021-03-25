@@ -118,7 +118,7 @@ export class App extends Component {
 			"did:unisot:test:n1aAmTXAg4o44Z9k8YCQncEY91r3TV7WU4",
 			"did:trustbloc:testnet.trustbloc.dev:EiBLTZcCj6u_XsufSuLVh2zbPEREjDcu8bnPgs0XyKkfPQ",
 			"did:bitxhub:appchain001:0xc7F999b83Af6DF9e67d0a37Ee7e900bF38b3D013",
-			"did:solid:DSb8Guj9tB1jvsyqrsE3Yi44hwnzrVVQc2gcS1J1dUxy",
+			"did:solid:AFMLgREQppe1XYTPgDZXBheWWg7kEFNnU5AQ9miAstk7",
 			"did:lit:AEZ87t1bi5bRxmVh3ksMUi"
 		];
 		this.examples.sort();
