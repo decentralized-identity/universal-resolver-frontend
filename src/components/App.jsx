@@ -51,6 +51,7 @@ export class App extends Component {
 			{name: 'did:trustbloc'},
 			{name: 'did:bitxhub'},
 			{name: 'did:solid'},
+			{name: 'did:lit'},
 		];
 		this.examples = [
 			'did:sov:WRfXPg8dantKVubE3HX8pw',
@@ -63,7 +64,20 @@ export class App extends Component {
 			'did:btcr:xkyt-fzzq-q23l-k4n',
 			'did:btcr:xxcl-lzpq-qcwz-sj2',
 			'did:v1:test:nym:z6MkgF4uJbLMoUin2uKaBf4Jb1F7SHzuALE8Ldq8FPPpHE9t',
-			'did:ethr:0xE6Fe788d8ca214A080b0f6aC7F48480b2AEfa9a6',
+			"did:ethr:0x3b0BC51Ab9De1e5B7B6E34E5b960285805C41736",
+			"did:ethr:0x03fdd57adec3d438ea237fe46b33ee1e016eda6b585c3e27ea66686c2ea5358479",
+			"did:ethr:mainnet:0x3b0BC51Ab9De1e5B7B6E34E5b960285805C41736",
+			"did:ethr:mainnet:0x03fdd57adec3d438ea237fe46b33ee1e016eda6b585c3e27ea66686c2ea5358479",
+			"did:ethr:0x1:0x3b0BC51Ab9De1e5B7B6E34E5b960285805C41736",
+			"did:ethr:0x1:0x03fdd57adec3d438ea237fe46b33ee1e016eda6b585c3e27ea66686c2ea5358479",
+			"did:ethr:rinkeby:0x3b0BC51Ab9De1e5B7B6E34E5b960285805C41736",
+			"did:ethr:rinkeby:0x03fdd57adec3d438ea237fe46b33ee1e016eda6b585c3e27ea66686c2ea5358479",
+			"did:ethr:0x4:0x3b0BC51Ab9De1e5B7B6E34E5b960285805C41736",
+			"did:ethr:0x4:0x03fdd57adec3d438ea237fe46b33ee1e016eda6b585c3e27ea66686c2ea5358479",
+			"did:ethr:rsk:0x3b0BC51Ab9De1e5B7B6E34E5b960285805C41736",
+			"did:ethr:rsk:0x03fdd57adec3d438ea237fe46b33ee1e016eda6b585c3e27ea66686c2ea5358479",
+			"did:ethr:0x1e:0x3b0BC51Ab9De1e5B7B6E34E5b960285805C41736",
+			"did:ethr:0x1e:0x03fdd57adec3d438ea237fe46b33ee1e016eda6b585c3e27ea66686c2ea5358479",
 			'did:nacl:Md8JiMIwsapml_FtQ2ngnGftNP5UmVCAUuhnLyAsPxI',
 			'did:jolo:1fb352353ff51248c5104b407f9c04c3666627fcf5a167d693c9fc84b75964e2',
 			'did:erc725:ropsten:2F2B37C890824242Cb9B0FE5614fA2221B79901E',
@@ -79,6 +93,9 @@ export class App extends Component {
 			'did:ont:AN5g6gz9EoQ3sCNu7514GEghZurrktCMiH',
 			'did:kilt:5CqJa4Ct7oMeMESzehTiN9fwYdGLd7tqeirRMpGDh2XxYYyx',
 			'did:web:did.actor:alice',
+			"did:web:did.actor:bob",
+			"did:web:did.actor:carol",
+			"did:web:did.actor:mike",
 			'ssi.labs.nic.at',
 			'did:evan:testcore:0x126E901F6F408f5E260d95c62E7c73D9B60fd734',
 			'did:echo:1.1.25.0',
@@ -101,7 +118,8 @@ export class App extends Component {
 			"did:unisot:test:n1aAmTXAg4o44Z9k8YCQncEY91r3TV7WU4",
 			"did:trustbloc:testnet.trustbloc.dev:EiBLTZcCj6u_XsufSuLVh2zbPEREjDcu8bnPgs0XyKkfPQ",
 			"did:bitxhub:appchain001:0xc7F999b83Af6DF9e67d0a37Ee7e900bF38b3D013",
-			"did:solid:AFMLgREQppe1XYTPgDZXBheWWg7kEFNnU5AQ9miAstk7"
+			"did:solid:AFMLgREQppe1XYTPgDZXBheWWg7kEFNnU5AQ9miAstk7",
+			"did:lit:AEZ87t1bi5bRxmVh3ksMUi"
 		];
 		this.examples.sort();
 		this.state = { drivers: this.drivers };
