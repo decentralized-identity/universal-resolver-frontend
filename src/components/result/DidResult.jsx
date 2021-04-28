@@ -19,7 +19,7 @@ export class DidResult extends Component {
 		var redirect = null;
 		if (this.props.didDocumentMetadata.redirect) redirect = (
 			<DidRedirect
-				redirect={this.state.redirect} />
+				redirect={this.props.didDocumentMetadata.redirect} />
 		);
 
 		var didDocumentServices;
