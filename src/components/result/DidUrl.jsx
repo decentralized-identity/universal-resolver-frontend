@@ -19,12 +19,12 @@ export class DidUrl extends Component {
 				</Table.Header>
 				<Table.Body>
 					<Table.Row className='body'>
-						<Table.Cell>{this.props.didUrl.did.didString}</Table.Cell>
-						<Table.Cell>{this.props.didUrl.did.method}</Table.Cell>
-						<Table.Cell>{this.props.didUrl.did.methodSpecificId}</Table.Cell>
-						<Table.Cell>{this.props.didUrl.path}</Table.Cell>
-						<Table.Cell>{this.props.didUrl.query}</Table.Cell>
-						<Table.Cell>{this.props.didUrl.fragment}</Table.Cell>
+						<Table.Cell>{this.props.did.didString}</Table.Cell>
+						<Table.Cell>{this.props.did.method}</Table.Cell>
+						<Table.Cell>{this.props.did.methodSpecificId}</Table.Cell>
+						<Table.Cell>{this.props.didUrl ? this.props.didUrl.path : null}</Table.Cell>
+						<Table.Cell>{this.props.didUrl ? this.props.didUrl.query : null}</Table.Cell>
+						<Table.Cell>{this.props.didUrl ? this.props.didUrl.fragment : null}</Table.Cell>
 					</Table.Row>
 				</Table.Body>
 			</Table>

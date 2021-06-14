@@ -12,8 +12,15 @@ export class DidResult extends Component {
 
 	render() {
 
+		var didUrl;
+		didUrl = this.props.didResolutionMetadata.didUrl;
+
+		var did;
+		did = this.props.didResolutionMetadata.did;
+		if ((!did) && didUrl) did = didUrl.did;
+
 		var qrcode = (
-			<QrCode did={this.props.didResolutionMetadata.didUrl.did} />
+			<QrCode did={did} />
 		);
 
 		var redirect = null;
@@ -125,7 +132,7 @@ export class DidResult extends Component {
 								Parser
 							</Item.Header>
 							<Item.Description>
-								<DidUrl didUrl={this.props.didResolutionMetadata.didUrl} />
+								<DidUrl didUrl={didUrl} did={did} />
 							</Item.Description>
 						</Item.Content>
 					</Item>
