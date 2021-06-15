@@ -13,7 +13,11 @@ export class ResolverInput extends Component {
 
 	resolve() {
 		axios
-			.get( determineHostName() + '1.0/identifiers/' + encodeURIComponent(this.state.input))
+			.get( determineHostName() + '1.0/identifiers/' + encodeURIComponent(this.state.input), {
+				headers: {
+					Accept: 'application/ld+json;profile="https://w3id.org/did-resolution"'
+				}
+			})
 			.then(response => {
 				const didDocument = response.data.didDocument;
 				const didResolutionMetadata = response.data.didResolutionMetadata;
