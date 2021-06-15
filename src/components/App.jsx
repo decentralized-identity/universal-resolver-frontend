@@ -58,6 +58,7 @@ export class App extends Component {
 			'did:sov:WRfXPg8dantKVubE3HX8pw',
 			'did:sov:CYQLsccvwhMTowprMjGjQ6',
 			'did:sov:builder:VbPQNHsvoLZdaNU7fTBeFx',
+			'did:sov:idunion:6iHBriJn1DVJt3AjLEuHYL',
 			'did:btcr:xz35-jznz-q9yu-ply',
 			'did:btcr:xkrn-xz7q-qsye-28p',
 			'did:btcr:x705-jznz-q3nl-srs',
