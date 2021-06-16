@@ -51,6 +51,7 @@ export class App extends Component {
 			{name: 'did:bitxhub'},
 			{name: 'did:sol'},
 			{name: 'did:lit'},
+			{name: 'did:ebsi'},
 			{name: 'did:emtrust'},
 			{name: 'did:meta'}
 		];
@@ -121,6 +122,7 @@ export class App extends Component {
 			"did:bitxhub:appchain001:0xc7F999b83Af6DF9e67d0a37Ee7e900bF38b3D013",
 			"did:sol:ygGfLvAyuRymPNv2fJDK1ZMpdy59m8cV5dak6A8uHKa",
 			"did:lit:AEZ87t1bi5bRxmVh3ksMUi",
+			"did:ebsi:DfPaUdYwuzcqFoiMDSrUX8aQyZnr2SesH3vDVASYv8PE",
 			"did:emtrust:0x242a5ac36676462bd58a",
 			"did:meta:0000000000000000000000000000000000000000000000000000000000005e65"
 		];
