@@ -27,10 +27,11 @@ export class ResolverInput extends Component {
 			.catch(error => {
 				if (error.response && error.response.data) {
 					var errorString;
-					if (error.response.status === 404)
-						errorString = "No result for " + this.state.input;
-					else
+					if (error.response.data.didResolutionMetadata && error.response.data.didResolutionMetadata['error']) {
+						errorString = "[" + error.response.data.didResolutionMetadata['error'] + "] " + error.response.data.didResolutionMetadata['errorMessage'];
+					} else {
 						errorString = String(error);
+					}
 					if (typeof error.response.data === 'object') {
 						const didDocument = error.response.data.didDocument;
 						const didResolutionMetadata = error.response.data.didResolutionMetadata;
