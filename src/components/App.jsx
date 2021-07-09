@@ -53,7 +53,8 @@ export class App extends Component {
 			{name: 'did:lit'},
 			{name: 'did:ebsi'},
 			{name: 'did:emtrust'},
-			{name: 'did:meta'}
+			{name: 'did:meta'},
+			{name: 'did:orb'}
 		];
 		this.examples = [
 			'did:sov:WRfXPg8dantKVubE3HX8pw',
@@ -124,7 +125,8 @@ export class App extends Component {
 			"did:lit:AEZ87t1bi5bRxmVh3ksMUi",
 			"did:ebsi:DfPaUdYwuzcqFoiMDSrUX8aQyZnr2SesH3vDVASYv8PE",
 			"did:emtrust:0x242a5ac36676462bd58a",
-			"did:meta:0000000000000000000000000000000000000000000000000000000000005e65"
+			"did:meta:0000000000000000000000000000000000000000000000000000000000005e65",
+			"did:orb:ipfs:bafkreifco5fp7ztvqnnvv4aqnnbktuvzhlh5tofr65ahyy37euafoscn7m:EiClaNSwhKSP6tQe36bYc5w41oRpCi1xv89MkUnNBm8agw"
 		];
 		this.examples.sort();
 		this.state = { drivers: this.drivers };
