@@ -54,7 +54,8 @@ export class App extends Component {
 			{name: 'did:ebsi'},
 			{name: 'did:emtrust'},
 			{name: 'did:meta'},
-			{name: 'did:orb'}
+			{name: 'did:orb'},
+			{name: 'did:tz'}
 		];
 		this.examples = [
 			'did:sov:WRfXPg8dantKVubE3HX8pw',
@@ -126,7 +127,13 @@ export class App extends Component {
 			"did:ebsi:DfPaUdYwuzcqFoiMDSrUX8aQyZnr2SesH3vDVASYv8PE",
 			"did:emtrust:0x242a5ac36676462bd58a",
 			"did:meta:0000000000000000000000000000000000000000000000000000000000005e65",
-			"did:orb:ipfs:bafkreifco5fp7ztvqnnvv4aqnnbktuvzhlh5tofr65ahyy37euafoscn7m:EiClaNSwhKSP6tQe36bYc5w41oRpCi1xv89MkUnNBm8agw"
+			"did:orb:ipfs:bafkreifco5fp7ztvqnnvv4aqnnbktuvzhlh5tofr65ahyy37euafoscn7m:EiClaNSwhKSP6tQe36bYc5w41oRpCi1xv89MkUnNBm8agw",
+			"did:tz:tz1YwA1FwpgLtc1G8DKbbZ6e6PTb1dQMRn5x",
+			"did:tz:delphinet:tz1WvvbEGpBXGeTVbLiR6DYBe1izmgiYuZbq",
+			"did:web:identity.foundation",
+			"did:key:z6MkpTHR8VNsBxYAAWHut2Geadd9jSwuBV8xRoAnwWsdvktH",
+			"did:key:zQ3shokFTS3brHcDQrn82RUDfCZESWL1ZdCEJwekUDPQiYBme",
+			"did:key:zDnaerDaTF5BXEavCrfRZEk316dpbLsfPDZ3WJ5hRTPFU2169"
 		];
 		this.examples.sort();
 		this.state = { drivers: this.drivers };
