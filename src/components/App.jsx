@@ -55,7 +55,8 @@ export class App extends Component {
 			{name: 'did:emtrust'},
 			{name: 'did:meta'},
 			{name: 'did:orb'},
-			{name: 'did:tz'}
+			{name: 'did:tz'},
+			{name: 'did:eosio'}
 		];
 		this.examples = [
 			'did:sov:WRfXPg8dantKVubE3HX8pw',
@@ -133,7 +134,9 @@ export class App extends Component {
 			"did:web:identity.foundation",
 			"did:key:z6MkpTHR8VNsBxYAAWHut2Geadd9jSwuBV8xRoAnwWsdvktH",
 			"did:key:zQ3shokFTS3brHcDQrn82RUDfCZESWL1ZdCEJwekUDPQiYBme",
-			"did:key:zDnaerDaTF5BXEavCrfRZEk316dpbLsfPDZ3WJ5hRTPFU2169"
+			"did:key:zDnaerDaTF5BXEavCrfRZEk316dpbLsfPDZ3WJ5hRTPFU2169",
+			"did:eosio:eos:eoscanadacom",
+			"did:eosio:4667b205c6838ef70ff7988f6e8257e8be0e1284a2f59699054a018f743b1d11:caleosblocks"
 		];
 		this.examples.sort();
 		this.state = { drivers: this.drivers };
