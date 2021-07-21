@@ -8,7 +8,7 @@ export class ResolverInput extends Component {
 
 	constructor(props) {
 		super(props);
-		this.state = { input: this.props.did, example: '' };
+		this.state = { input: this.props.input, example: '' };
 	}
 
 	resolve() {
@@ -54,6 +54,12 @@ export class ResolverInput extends Component {
 		if (this.props.autoResolve) {
 			this.props.onLoading();
 			this.resolve();
+		}
+	}
+
+	componentDidUpdate(prevProps) {
+		if (prevProps.input !== this.props.input) {
+			this.setState({ input: this.props.input });
 		}
 	}
 

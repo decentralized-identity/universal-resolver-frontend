@@ -13,7 +13,7 @@ export class Drivers extends Component {
 
 	render() {
 		const drivers = this.props.drivers.map((driver, i) =>
-			<Driver key={i} name={driver.name} />
+			<Driver key={i} name={driver} />
 		);
 		return (
 			<>
