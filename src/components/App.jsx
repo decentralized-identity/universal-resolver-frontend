@@ -152,7 +152,7 @@ export class App extends Component {
 				did = this.props.location.hash.substr(1);
 			}
 			autoResolve = true;
-		} else {
+		} else {
 			did = 'did:elem:EiAS3mqC4OLMKOwcz3ItIL7XfWduPT7q3Fa4vHgiCfSG2A';
 			autoResolve = false;
 		}
@@ -160,7 +160,7 @@ export class App extends Component {
 			<div className="app">
 				<Heading />
 				<Drivers drivers={this.state.drivers} />
-				<Resolver did={did} autoResolve={autoResolve} examples={this.examples} />
+				<Resolver did={did} autoResolve={autoResolve} examples={this.examples} />
 				<Footer />
 			</div>
 		);
