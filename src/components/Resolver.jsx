@@ -31,7 +31,7 @@ export class Resolver extends Component {
 		return (
 			<Segment className="resolver">
 				<ResolverInput
-					did={this.props.did}
+					input={this.props.input}
 					autoResolve={this.props.autoResolve}
 					examples={this.props.examples}
 					onClear={this.onClear.bind(this)}
