@@ -67,7 +67,7 @@ export class App extends Component {
 			}
 			autoResolve = true;
 		} else {
-			input = this.state.examples[0];
+			input = 'did:ion:EiClkZMDxPKqC9c-umQfTkR8vvZ9JPhl_xLDI9Nfk38w5w';
 			autoResolve = false;
 		}
 		return (
