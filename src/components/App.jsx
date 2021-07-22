@@ -25,6 +25,7 @@ export class App extends Component {
 			.then(response => {
 				let drivers = response.data.map(method => 'did:' + method);
 				drivers = [...new Set(drivers)];
+				drivers.sort();
 				this.setState({ drivers: drivers });
 			})
 			.catch(error => {
@@ -41,6 +42,7 @@ export class App extends Component {
 			.then(response => {
 				let examples = Object.values(response.data).reduce((acc, testIdentifiers) => [...acc, ...testIdentifiers]);
 				examples = [...new Set(examples)];
+				examples.sort();
 				this.setState({ examples: examples });
 			})
 			.catch(error => {
