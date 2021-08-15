@@ -75,6 +75,7 @@ export class DidResult extends Component {
 				publicKeyPgp={didDocumentVerificationMethod.publicKeyPgp}
 				ethereumAddress={didDocumentVerificationMethod.ethereumAddress}
 				address={didDocumentVerificationMethod.address}
+				blockchainAccountId={didDocumentVerificationMethod.blockchainAccountId}
 				selected={this.props.didResolutionMetadata.selectedKeys ? this.props.didResolutionMetadata.selectedKeys.includes(i) : null} />
 		);
 		if (Object.keys(verificationMethodsList).length > 0) verificationMethodsList = (
