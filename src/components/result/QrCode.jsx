@@ -7,7 +7,7 @@ export class QrCode extends Component {
 		return (
 			<div className="modal">
 				<div className="modal_content">
-					<QRCode value={this.props.did}/>
+					<QRCode value={this.props.qrcodedata}/>
 				</div>
 			</div>
 		);
