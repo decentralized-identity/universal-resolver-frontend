@@ -14,15 +14,15 @@ export class DidResult extends Component {
 
 		var didUrl;
 		didUrl = this.props.didResolutionMetadata.didUrl;
-		if (didUrl && didUrl.didUrlString) didUrl = didUrl.didUrlString;
+		var didUrlString = (didUrl && didUrl.didUrlString) ? didUrl.didUrlString : null;
 
 		var did;
 		did = this.props.didResolutionMetadata.did;
-		if (did && did.didString) did = did.didString;
+		var didString = (did && did.didString) ? did.didString : null;
 
 		var qrcodedata;
-		qrcodedata = didUrl;
-		if (!qrcodedata) qrcodedata = did;
+		qrcodedata = didUrlString;
+		if (!qrcodedata) qrcodedata = didString;
 		if ((typeof qrcodedata) !== 'string') qrcodedata = JSON.stringify(qrcodedata);
 
 		var qrcode = (
