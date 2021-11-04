@@ -6,6 +6,8 @@ export class Service extends Component {
 
 	render() {
 		const icon = this.props.selected ? 'wifi blue' : 'wifi';
+		const type = this.props.type;
+		const description = typeof this.props.serviceEndpoint === 'string' ? this.props.serviceEndpoint : JSON.stringify(this.props.serviceEndpoint);
 		const id = this.props.id ? (
 			<Card.Meta>
 				{this.props.id}
@@ -16,11 +18,11 @@ export class Service extends Component {
 				<Card.Content>
 					<Card.Header>
 						<Icon className={icon} />
-						{this.props.type}
+						{type}
 					</Card.Header>
 					{id}
 					<Card.Description>
-						{this.props.serviceEndpoint}
+						{description}
 					</Card.Description>
 				</Card.Content>
 			</Card>
