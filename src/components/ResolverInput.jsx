@@ -12,12 +12,10 @@ export class ResolverInput extends Component {
 	}
 
 	resolve() {
+		const url = determineHostName() + '1.0/identifiers/' + encodeURIComponent(this.state.input.trim());
+		const config = {'headers': {'Accept': 'application/ld+json;profile="https://w3id.org/did-resolution"'}};
 		axios
-			.get( determineHostName() + '1.0/identifiers/' + encodeURIComponent(this.state.input.trim()), {
-				headers: {
-					Accept: 'application/ld+json;profile="https://w3id.org/did-resolution"'
-				}
-			})
+			.get(url, config)
 			.then(response => {
 				const didDocument = response.data.didDocument;
 				const didResolutionMetadata = response.data.didResolutionMetadata;
@@ -34,7 +32,7 @@ export class ResolverInput extends Component {
 					}
 					if (typeof error.response.data === 'object') {
 						const didDocument = error.response.data.didDocument;
-						const didResolutionMetadata = error.response.data.didResolutionMetadata;
+						const didResolutionMetadata = error.response.data.didResolutionMetadata ? error.response.data.didResolutionMetadata : error.response.data;
 						const didDocumentMetadata = error.response.data.didDocumentMetadata;
 						this.props.onError(errorString, didDocument, didResolutionMetadata, didDocumentMetadata);
 					} else {
@@ -42,8 +40,8 @@ export class ResolverInput extends Component {
 					}
 				} else if (error.request) {
 					this.props.onError(String(error) + ": " + JSON.stringify(error.request));
-				} else if (error.message) {
-					this.props.onError(error.message);
+				} else if (error.name && error.message) {
+					this.props.onError(error.name + ': ' + error.message);
 				} else {
 					this.props.onError(String(error));
 				}
