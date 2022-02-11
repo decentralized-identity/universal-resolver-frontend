@@ -23,7 +23,7 @@
     "@babel/preset-react": "^7.12.10",
     "babel-loader": "^8.2.2",
     "css-loader": "^5.0.1",
-    "node-sass": "^5.0.0",
+    "node-sass": "^7.0.0",
     "sass-loader": "^11.0.1",
     "semantic-ui-react": "^2.0.3",
     "style-loader": "^2.0.0",
