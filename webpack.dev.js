@@ -10,7 +10,6 @@ module.exports = merge(common, {
     })
   ],
   devServer: {
-    contentBase: './src',
-    publicPath: '/output'
+    static: './src'
   }
 });

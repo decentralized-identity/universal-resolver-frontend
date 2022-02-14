@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack --config webpack.prod.js",
-    "dev": "webpack serve --config webpack.dev.js --hot --inline --port 7081"
+    "dev": "webpack serve --config webpack.dev.js --hot --port 7081"
   },
   "keywords": [
     "DID"
@@ -31,7 +31,7 @@
     "url-loader": "^4.1.1",
     "webpack": "^5.19.0",
     "webpack-cli": "^4.4.0",
-    "webpack-dev-server": "^3.11.2",
+    "webpack-dev-server": "^4.7.4",
     "webpack-merge": "^5.7.3"
   },
   "dependencies": {
