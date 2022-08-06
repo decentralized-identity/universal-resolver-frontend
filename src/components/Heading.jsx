@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { Segment, Image } from 'semantic-ui-react'
 
 import WarningButton from './WarningButton';
+import ConfigurationButton from "./ConfigurationButton";
 
 export class Heading extends Component {
 
@@ -10,6 +11,7 @@ export class Heading extends Component {
 		return (
 			<Segment className='heading'>
 				<WarningButton />
+				<ConfigurationButton />
 				<Image src='images/logo.jpg' alt={'DIF Universal Resolver'}/>
 			</Segment>
 		);

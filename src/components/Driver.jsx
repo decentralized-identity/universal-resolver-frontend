@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { Item } from 'semantic-ui-react'
+import { Label } from 'semantic-ui-react'
 
 export class Driver extends Component {
 
@@ -10,9 +10,9 @@ export class Driver extends Component {
 
 	render() {
 		return (
-			<Item className="driver">
+			<Label className="driver">
 				{this.props.name}
-			</Item>
+			</Label>
 		);
 	}
 }

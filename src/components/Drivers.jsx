@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { Menu, Item } from 'semantic-ui-react'
+import { Label } from 'semantic-ui-react'
 
 import ConfigurationButton from './ConfigurationButton';
 import Driver from './Driver';
@@ -13,21 +13,20 @@ export class Drivers extends Component {
 
 	render() {
 		const drivers = this.props.drivers.map((driver, i) =>
-			<Driver key={i} name={driver} />
+			<span class="driver-container">
+				<Driver key={i} name={driver} />
+			</span>
 		);
 		return (
-			<>
-				<ConfigurationButton />
-				<div className="drivers-container">
-					<div className="drivers-container-label">
+			<div>
+				<div className="drivers">
+					<Label className="drivers-label" basic>
 						Supported methods:
-					</div>
-					<div className="drivers">
-						{drivers}
-						<a target="_blank" href="https://github.com/decentralized-identity/universal-resolver/blob/master/docs/driver-development.md">+ Add your driver?</a>
-					</div>
+					</Label>
+					{drivers}
+					<a target="_blank" href="https://github.com/decentralized-identity/universal-resolver/blob/master/docs/driver-development.md">Contribute a driver?</a>
 				</div>
-			</>
+			</div>
 		);
 	}
 }
