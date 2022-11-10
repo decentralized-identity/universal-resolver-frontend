@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { Segment, Tab, Divider } from 'semantic-ui-react'
+import { Segment, Tab, Divider, Button, Modal, Grid } from 'semantic-ui-react'
 
 import ResolverInput from './ResolverInput';
 import Error from './Error';
@@ -13,7 +13,7 @@ export class Resolver extends Component {
 
 	constructor (props) {
 		super(props);
-		this.state = { loading: false, didDocument: null, didResolutionMetadata: null, didDocumentMetadata: null, error: null };
+		this.state = { loading: false, didDocument: null, didResolutionMetadata: null, didDocumentMetadata: null, error: null, copyText: false };
 	}
 
 	render() {
@@ -39,6 +39,19 @@ export class Resolver extends Component {
 					onResult={this.onResult.bind(this)}
 					onError={this.onError.bind(this)} />
 				<Divider />
+				<div className='copy'>
+					<Button 
+					disabled={!this.didDocument}
+					onClick={()=>{
+						if(this.state.didDocument) {
+							navigator.clipboard.writeText(`${window.location.href}#${this.state.didDocument.id}`);
+							this.toggleCopyText()
+						}
+						
+					}} style={{paddingBottom: '10px'}} primary >Copy link to result</Button>
+					<p className={this.state.copyText ? `copy-text` : `copy-text-hidden`}>Url with DID copied to clipboard 🚀 🚀 🚀</p>
+				</div>
+				<Divider />
 				<Tab panes={[
 					{ menuItem: 'RESULT', render: () =>
 					<Tab.Pane loading={this.state.loading}>
@@ -62,6 +75,11 @@ export class Resolver extends Component {
 				]} />
 			</Segment>
 		);
+	}
+
+	toggleCopyText() {
+		this.setState({ ...this.state, copyText: !this.state.copyText});
+		setTimeout(()=>{this.setState({...this.state, copyText: !this.state.copyText });},1000)
 	}
 
 	onClear() {
