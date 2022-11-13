@@ -41,14 +41,15 @@ export class Resolver extends Component {
 				<Divider />
 				<div className='copy'>
 					<Button 
-					disabled={!this.didDocument}
-					onClick={()=>{
-						if(this.state.didDocument) {
-							navigator.clipboard.writeText(`${window.location.href}#${this.state.didDocument.id}`);
+						disabled={!this.state.didDocument}
+						onClick={()=>{
+							if(this.state.didDocument) {
+								navigator.clipboard.writeText(`${window.location.href}#${this.state.didDocument.id}`);
+								
+							}
 							this.toggleCopyText()
-						}
-						
-					}} style={{paddingBottom: '10px'}} primary >Copy link to result</Button>
+						}} style={{paddingBottom: '10px'}} primary >{!this.state.didDocument ? "Resolve to enable copy": "Copy link to result"}
+					</Button>
 					<p className={this.state.copyText ? `copy-text` : `copy-text-hidden`}>Url with DID copied to clipboard 🚀 🚀 🚀</p>
 				</div>
 				<Divider />
