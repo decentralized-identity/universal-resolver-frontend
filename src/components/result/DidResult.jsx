@@ -78,9 +78,10 @@ export class DidResult extends Component {
 				publicKeyHex={didDocumentVerificationMethod.publicKeyHex}
 				publicKeyPem={didDocumentVerificationMethod.publicKeyPem}
 				publicKeyJwk={didDocumentVerificationMethod.publicKeyJwk}
+				publicKeyMultibase={didDocumentVerificationMethod.publicKeyMultibase}
 				publicKeyPgp={didDocumentVerificationMethod.publicKeyPgp}
-				ethereumAddress={didDocumentVerificationMethod.ethereumAddress}
 				address={didDocumentVerificationMethod.address}
+				ethereumAddress={didDocumentVerificationMethod.ethereumAddress}
 				blockchainAccountId={didDocumentVerificationMethod.blockchainAccountId}
 				selected={this.props.didResolutionMetadata.selectedKeys ? this.props.didResolutionMetadata.selectedKeys.includes(i) : null} />
 		);

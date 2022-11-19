@@ -14,9 +14,9 @@ export class VerificationMethod extends Component {
 		else if (this.props.publicKeyJwk) publicKey = JSON.stringify(this.props.publicKeyJwk);
 		else if (this.props.publicKeyMultibase) publicKey = JSON.stringify(this.props.publicKeyMultibase);
 		else if (this.props.publicKeyPgp) publicKey = this.props.publicKeyPgp;
+		else if (this.props.address) publicKey = this.props.address;
 		else if (this.props.ethereumAddress) publicKey = this.props.ethereumAddress;
 		else if (this.props.blockchainAccountId) publicKey = this.props.blockchainAccountId;
-		else if (this.props.address) publicKey = this.props.address;
 		else publicKey = '(no value)';
 		//publicKey = publicKey.match(/.{1,32}/g).join(' ');
 		const id = this.props.id ? (
