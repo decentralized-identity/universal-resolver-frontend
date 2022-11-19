@@ -12,7 +12,7 @@ export class VerificationMethod extends Component {
 		else if (this.props.publicKeyHex) publicKey = this.props.publicKeyHex;
 		else if (this.props.publicKeyPem) publicKey = this.props.publicKeyPem;
 		else if (this.props.publicKeyJwk) publicKey = JSON.stringify(this.props.publicKeyJwk);
-		else if (this.props.publicKeyMultibase) publicKey = JSON.stringify(this.props.publicKeyMultibase);
+		else if (this.props.publicKeyMultibase) publicKey = this.props.publicKeyMultibase;
 		else if (this.props.publicKeyPgp) publicKey = this.props.publicKeyPgp;
 		else if (this.props.address) publicKey = this.props.address;
 		else if (this.props.ethereumAddress) publicKey = this.props.ethereumAddress;
