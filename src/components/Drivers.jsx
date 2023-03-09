@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 
 import { Label } from 'semantic-ui-react'
 
-import ConfigurationButton from './ConfigurationButton';
 import Driver from './Driver';
 
 export class Drivers extends Component {
@@ -12,9 +11,10 @@ export class Drivers extends Component {
 	}
 
 	render() {
+		const validity = this.props.validity;
 		const drivers = this.props.drivers.map((driver, i) =>
-			<span class="driver-container">
-				<Driver key={i} name={driver} />
+			<span key={i} className="driver-container">
+				<Driver name={driver} validity={validity[driver]} />
 			</span>
 		);
 		return (

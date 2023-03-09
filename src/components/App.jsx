@@ -16,7 +16,11 @@ export class App extends Component {
 			'did:sov:WRfXPg8dantKVubE3HX8pw',
 			'did:key:z6Mkfriq1MqLBoPWecGoDLjguo1sB9brj6wT3qZ5BxkKpuP6',
 		];
-		this.state = { drivers: drivers, examples: examples };
+		let validity = {
+			'did:sov': { 'status': 'partially-compliant' },
+			'did:key': { 'status': 'compliant' }
+		}
+		this.state = { drivers: drivers, examples: examples, validity: validity };
 	}
 
 	componentDidMount() {
@@ -54,6 +58,21 @@ export class App extends Component {
 					console.log("Cannot retrieve test identifiers: " + String(error));
 				}
 			});
+		axios
+			.get( 'https://identity.foundation/universal-resolver/result.json')
+			.then(response => {
+				let validity = response.data;
+				this.setState({ validity: validity });
+			})
+			.catch(error => {
+				if (error.request) {
+					console.log("Cannot retrieve validity: " + String(error) + ": " + JSON.stringify(error.request));
+				} else if (error.message) {
+					console.log("Cannot retrieve validity: " + error.message);
+				} else {
+					console.log("Cannot retrieve validity: " + String(error));
+				}
+			});
 	}
 
 	render() {
@@ -73,7 +92,7 @@ export class App extends Component {
 		return (
 			<div className="app">
 				<Heading />
-				<Drivers drivers={this.state.drivers} />
+				<Drivers drivers={this.state.drivers} validity={this.state.validity} />
 				<Resolver input={input} autoResolve={autoResolve} examples={this.state.examples} />
 				<Footer />
 			</div>

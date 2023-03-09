@@ -1,2 +1,22 @@
 .driver {
 }
+
+.validity-compliant {
+	border-bottom: 2px solid lightgreen !important;
+}
+
+.validity-partially-compliant {
+	border-bottom: 2px solid yellow !important;
+}
+
+.validity-non-compliant {
+	border-bottom: 2px solid orange !important;
+}
+
+.validity-no-response {
+	border-bottom: 2px solid mediumpurple !important;
+}
+
+[data-tooltip]::after {
+	white-space: pre;
+}
