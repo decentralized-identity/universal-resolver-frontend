@@ -39,18 +39,30 @@ export class Resolver extends Component {
 					onResult={this.onResult.bind(this)}
 					onError={this.onError.bind(this)} />
 				<Divider />
-				<div className='copy'>
-					<Button 
-						disabled={!this.state.didDocument}
-						onClick={()=>{
-							if(this.state.didDocument) {
-								navigator.clipboard.writeText(`${window.location.href}#${this.state.didDocument.id}`);
-								
-							}
-							this.toggleCopyText()
-						}} style={{paddingBottom: '10px'}} primary >{!this.state.didDocument ? "Resolve to enable copy": "Copy link to result"}
-					</Button>
-					<p className={this.state.copyText ? `copy-text` : `copy-text-hidden`}>Url with DID copied to clipboard 🚀 🚀 🚀</p>
+				<div className='feature_button_area'>
+					<div className='feature_button'>
+						<Button 
+							disabled={!this.state.didDocument}
+							onClick={()=>{
+								if(this.state.didDocument) {
+									navigator.clipboard.writeText(`${window.location.href}#${this.state.didDocument.id}`);
+									
+								}
+								this.toggleCopyText()
+							}} style={{paddingBottom: '10px'}} primary >{!this.state.didDocument ? "Resolve to enable copy": "Copy link to result"}
+						</Button>
+						<p className={this.state.copyText ? `feature_button-text` : `feature_button-hidden`}>Url with DID copied to clipboard 🚀 🚀 🚀</p>
+					</div>
+					<div className='feature_button'>
+						<Button 
+							disabled={!this.state.didDocument}
+							onClick={()=>{
+								if(this.state.didDocument) {
+									window.open("https://didlint.ownyourdata.eu/validate?did=" + this.state.didDocument.id, '_blank');
+								}
+							}} style={{paddingBottom: '10px'}} primary >{!this.state.didDocument ? "Check Compliance": "Check Compliance"}
+						</Button>
+					</div>
 				</div>
 				<Divider />
 				<Tab panes={[

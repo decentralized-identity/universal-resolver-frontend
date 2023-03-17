@@ -8,14 +8,18 @@
 .resolver {
 }
 
-.copy {
+.feature_button {
     display: flex;
     align-items: center;
 }
 
-.copy-text {
+.feature_button-text {
     margin-left: 5px;
 }
-.copy-text-hidden {
+.feature_button-hidden {
     display: none;
+}
+
+.feature_button_area {
+    display: inline-flex;
 }
