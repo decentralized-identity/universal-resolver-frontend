@@ -7,6 +7,7 @@ import DidUrl from './DidUrl';
 import DidRedirect from './DidRedirect';
 import Service from './Service';
 import VerificationMethod from './VerificationMethod';
+import { determineHostName } from "../utils";
 
 export class DidResult extends Component {
 
@@ -22,7 +23,7 @@ export class DidResult extends Component {
 
 		var qrcodedata;
 		qrcodedata = didUrlString;
-		if (!qrcodedata) qrcodedata = didString;
+		if (!qrcodedata) qrcodedata = determineHostName() + '#' + didString;
 		if ((typeof qrcodedata) !== 'string') qrcodedata = JSON.stringify(qrcodedata);
 
 		var qrcode = (
