@@ -5,7 +5,7 @@ import Heading from './Heading';
 import Resolver  from './Resolver';
 import Footer from './Footer';
 import axios from "axios";
-import {determineHostName} from "./utils";
+import {getBackendUrl} from "./utils";
 
 export class App extends Component {
 
@@ -25,7 +25,7 @@ export class App extends Component {
 
 	componentDidMount() {
 		axios
-			.get( determineHostName() + '1.0/methods')
+			.get( getBackendUrl() + '1.0/methods')
 			.then(response => {
 				let drivers = response.data.map(method => 'did:' + method);
 				drivers = [...new Set(drivers)];
@@ -42,7 +42,7 @@ export class App extends Component {
 				}
 			});
 		axios
-			.get( determineHostName() + '1.0/testIdentifiers')
+			.get( getBackendUrl() + '1.0/testIdentifiers')
 			.then(response => {
 				let examples = Object.values(response.data).reduce((acc, testIdentifiers) => [...acc, ...testIdentifiers]);
 				examples = [...new Set(examples)];

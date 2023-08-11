@@ -3,7 +3,7 @@ import axios from 'axios';
 
 import { Button, Modal } from 'semantic-ui-react'
 import { Highlight } from 'react-fast-highlight';
-import { determineHostName } from './utils';
+import { getBackendUrl } from './utils';
 
 export class ConfigurationButton extends Component {
 
@@ -15,7 +15,7 @@ export class ConfigurationButton extends Component {
 	onClick() {
 //		this.props.onLoading();
 		axios
-			.get( determineHostName() + '1.0/properties/')
+			.get( getBackendUrl() + '1.0/properties/')
 			.then(response => {
 				this.setState({ drivers: response.data });
 			})

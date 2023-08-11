@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 import { Item, Input, Button, Dropdown } from 'semantic-ui-react';
-import { determineHostName } from './utils';
+import { getBackendUrl } from './utils';
 
 export class ResolverInput extends Component {
 
@@ -12,7 +12,7 @@ export class ResolverInput extends Component {
 	}
 
 	resolve() {
-		const url = determineHostName() + '1.0/identifiers/' + encodeURIComponent(this.state.input.trim());
+		const url = getBackendUrl() + '1.0/identifiers/' + encodeURIComponent(this.state.input.trim());
 		const config = {'headers': {'Accept': 'application/ld+json;profile="https://w3id.org/did-resolution"'}};
 		axios
 			.get(url, config)
