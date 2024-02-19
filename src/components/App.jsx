@@ -86,7 +86,7 @@ export class App extends Component {
 			}
 			autoResolve = true;
 		} else {
-			input = 'did:ion:EiClkZMDxPKqC9c-umQfTkR8vvZ9JPhl_xLDI9Nfk38w5w';
+			input = 'did:ethr:mainnet:0x3b0bc51ab9de1e5b7b6e34e5b960285805c41736';
 			autoResolve = false;
 		}
 		return (
