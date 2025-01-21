@@ -12,8 +12,11 @@ export class ResolverInput extends Component {
 	}
 
 	resolve() {
-		const url = getBackendUrl() + '1.0/identifiers/' + encodeURIComponent(this.state.input.trim());
-		const config = {'headers': {'Accept': 'application/ld+json;profile="https://w3id.org/did-resolution"'}};
+		const input = this.state.input.trim();
+		const isResolve = !(input.includes('/') && ! input.includes('?'));
+		const url = getBackendUrl() + '1.0/identifiers/' + encodeURIComponent(input);
+		const acceptMediaType = isResolve ? 'application/ld+json;profile="https://w3id.org/did-resolution"' : 'application/ld+json;profile="https://w3id.org/did-url-dereferencing"';
+		const config = {'headers': {'Accept': acceptMediaType}};
 		axios
 			.get(url, config)
 			.then(response => {
