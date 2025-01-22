@@ -12,7 +12,7 @@ export class ResolverInput extends Component {
 	}
 
 	resolve() {
-		const url = getBackendUrl() + '1.0/identifiers/' + encodeURIComponent(this.state.input.trim());
+		const url = getBackendUrl() + '1.0/identifiers/' + this.state.input.trim();
 		const config = {'headers': {'Accept': 'application/ld+json;profile="https://w3id.org/did-resolution"'}};
 		axios
 			.get(url, config)
