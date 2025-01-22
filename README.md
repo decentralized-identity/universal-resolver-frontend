@@ -24,4 +24,4 @@ Production build and creating & runnig a docker container. The frontend will be 
 
     npm run build
     docker build -f ./docker/Dockerfile . -t universalresolver/universal-resolver-frontend 
-    docker run -p 80:80 universalresolver/universal-resolver-frontend
+    docker run -it -p 7081:7081 -e BACKEND_URL="http://localhost:8080" universalresolver/universal-resolver-frontend

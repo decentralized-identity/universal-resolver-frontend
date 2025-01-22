@@ -14,7 +14,7 @@ export class ResolverInput extends Component {
 	resolve() {
 		const input = this.state.input.trim();
 		const isResolve = !(input.includes('/') && ! input.includes('?'));
-		const url = getBackendUrl() + '1.0/identifiers/' + encodeURIComponent(input);
+		const url = getBackendUrl() + '1.0/identifiers/' + input;
 		const acceptMediaType = isResolve ? 'application/ld+json;profile="https://w3id.org/did-resolution"' : 'application/ld+json;profile="https://w3id.org/did-url-dereferencing"';
 		const config = {'headers': {'Accept': acceptMediaType}};
 		console.log("url: " + url);
