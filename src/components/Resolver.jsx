@@ -5,15 +5,16 @@ import { Segment, Tab, Divider, Button, Modal, Grid } from 'semantic-ui-react'
 import ResolverInput from './ResolverInput';
 import Error from './Error';
 import DidResult from './result/DidResult';
+import DidUrlResult from './result/DidUrlResult';
 import DidDocument from './result/DidDocument';
-import DidResolutionMetadata from './result/DidResolutionMetadata';
-import DidDocumentMetadata from './result/DidDocumentMetadata';
+import DidUrlContent from './result/DidUrlContent';
+import DidMetadata from './result/DidMetadata';
 
 export class Resolver extends Component {
 
 	constructor (props) {
 		super(props);
-		this.state = { loading: false, didDocument: null, didResolutionMetadata: null, didDocumentMetadata: null, error: null, copyText: false };
+		this.state = { loading: false, didDocument: null, didResolutionMetadata: null, didDocumentMetadata: null, content: null, dereferencingMetadata: null, contentMetadata: null, error: null, copyText: false };
 	}
 
 	render() {
@@ -21,12 +22,62 @@ export class Resolver extends Component {
 		if (this.state.error) resultOrError = (
 			<Error text={this.state.error} />
 			);
-		else if (this.state.didDocument || this.state.didResolutionMetadata) resultOrError = (
+		else if (this.state.didDocument || this.state.didResolutionMetadata || this.state.didDocumentMetadata) resultOrError = (
 			<DidResult
 				didDocument={this.state.didDocument}
 				didResolutionMetadata={this.state.didResolutionMetadata}
 				didDocumentMetadata={this.state.didDocumentMetadata} />
 			);
+		else if (this.state.content || this.state.dereferencingMetadata || this.state.contentMetadata) resultOrError = (
+			<DidUrlResult
+				content={this.state.content}
+				dereferencingMetadata={this.state.dereferencingMetadata}
+				contentMetadata={this.state.contentMetadata} />
+		);
+
+		var panes;
+		if (this.state.didDocument || this.state.didResolutionMetadata) panes = [
+			{ menuItem: 'RESULT', render: () =>
+				<Tab.Pane loading={this.state.loading}>
+					{resultOrError}
+				</Tab.Pane> },
+			{ menuItem: 'DID DOCUMENT', render: () =>
+				<Tab.Pane loading={this.state.loading}>
+					<DidDocument
+						didDocument={this.state.didDocument} />
+				</Tab.Pane> },
+			{ menuItem: 'RESOLUTION METADATA', render: () =>
+				<Tab.Pane loading={this.state.loading}>
+					<DidMetadata
+						didMetadata={this.state.didResolutionMetadata} />
+				</Tab.Pane> },
+			{ menuItem: 'DOCUMENT METADATA', render: () =>
+				<Tab.Pane loading={this.state.loading}>
+					<DidMetadata
+						didMetadata={this.state.didDocumentMetadata} />
+				</Tab.Pane> }
+		]
+		else if (this.state.content || this.state.dereferencingMetadata) panes = [
+			{ menuItem: 'RESULT', render: () =>
+				<Tab.Pane loading={this.state.loading}>
+					{resultOrError}
+				</Tab.Pane> },
+			{ menuItem: 'CONTENT', render: () =>
+				<Tab.Pane loading={this.state.loading}>
+					<DidUrlContent
+						content={this.state.content} />
+				</Tab.Pane> },
+			{ menuItem: 'DEREFERENCING METADATA', render: () =>
+				<Tab.Pane loading={this.state.loading}>
+					<DidMetadata
+						didMetadata={this.state.dereferencingMetadata} />
+				</Tab.Pane> },
+			{ menuItem: 'CONTENT METADATA', render: () =>
+				<Tab.Pane loading={this.state.loading}>
+					<DidMetadata
+						didMetadata={this.state.contentMetadata} />
+				</Tab.Pane> }
+		];
 
 		return (
 			<Segment className="resolver">
@@ -36,7 +87,8 @@ export class Resolver extends Component {
 					examples={this.props.examples}
 					onClear={this.onClear.bind(this)}
 					onLoading={this.onLoading.bind(this)}
-					onResult={this.onResult.bind(this)}
+					onResultResolve={this.onResultResolve.bind(this)}
+					onResultDereference={this.onResultDereference.bind(this)}
 					onError={this.onError.bind(this)} />
 				<Divider />
 				<div className='feature_button_area'>
@@ -65,27 +117,9 @@ export class Resolver extends Component {
 					</div>
 				</div>
 				<Divider />
-				<Tab panes={[
-					{ menuItem: 'RESULT', render: () =>
-					<Tab.Pane loading={this.state.loading}>
-						{resultOrError}
-					</Tab.Pane> },
-					{ menuItem: 'DID DOCUMENT', render: () =>
-					<Tab.Pane loading={this.state.loading}>
-						<DidDocument
-							didDocument={this.state.didDocument} />
-					</Tab.Pane> },
-					{ menuItem: 'RESOLUTION METADATA', render: () =>
-					<Tab.Pane loading={this.state.loading}>
-						<DidResolutionMetadata
-							didResolutionMetadata={this.state.didResolutionMetadata} />
-					</Tab.Pane> },
-					{ menuItem: 'DOCUMENT METADATA', render: () =>
-					<Tab.Pane loading={this.state.loading}>
-						<DidDocumentMetadata
-							didDocumentMetadata={this.state.didDocumentMetadata} />
-					</Tab.Pane> }
-				]} />
+				<Tab panes={
+					panes
+				} />
 			</Segment>
 		);
 	}
@@ -96,19 +130,27 @@ export class Resolver extends Component {
 	}
 
 	onClear() {
-		this.setState({ loading: false, didDocument: null, didResolutionMetadata: null, didDocumentMetadata: null, error: null });
+		this.setState({ loading: false, didDocument: null, didResolutionMetadata: null, didDocumentMetadata: null, content: null, dereferencingMetadata: null, contentMetadata: null, error: null });
 	}
 
 	onLoading() {
-		this.setState({ loading: true, didDocument: null, didResolutionMetadata: null, didDocumentMetadata: null, error: null });
+		this.setState({ loading: true, didDocument: null, didResolutionMetadata: null, didDocumentMetadata: null, content: null, dereferencingMetadata: null, contentMetadata: null, error: null });
 	}
 
-	onResult(didDocument, didResolutionMetadata, didDocumentMetadata) {
-		this.setState({ loading: false, didDocument: didDocument, didResolutionMetadata: didResolutionMetadata, didDocumentMetadata: didDocumentMetadata, error: null });
+	onResultResolve(didDocument, didResolutionMetadata, didDocumentMetadata) {
+		this.setState({ loading: false, didDocument: didDocument, didResolutionMetadata: didResolutionMetadata, didDocumentMetadata: didDocumentMetadata, content: null, dereferencingMetadata: null, contentMetadata: null, error: null });
 	}
 
 	onError(error, didDocument, didResolutionMetadata, didDocumentMetadata) {
-		this.setState({ loading: false, didDocument: didDocument, didResolutionMetadata: didResolutionMetadata, didDocumentMetadata: didDocumentMetadata, error: error });
+		this.setState({ loading: false, didDocument: didDocument, didResolutionMetadata: didResolutionMetadata, didDocumentMetadata: didDocumentMetadata, content: null, dereferencingMetadata: null, contentMetadata: null, error: error });
+	}
+
+	onResultDereference(content, dereferencingMetadata, contentMetadata) {
+		this.setState({ loading: false, didDocument: null, didResolutionMetadata: null, didDocumentMetadata: null, content: content, dereferencingMetadata: dereferencingMetadata, contentMetadata: contentMetadata, error: null });
+	}
+
+	onError(error, content, dereferencingMetadata, contentMetadata) {
+		this.setState({ loading: false, didDocument: null, didResolutionMetadata: null, didDocumentMetadata: null, content: content, dereferencingMetadata: dereferencingMetadata, contentMetadata: contentMetadata, error: error });
 	}
 }
 
