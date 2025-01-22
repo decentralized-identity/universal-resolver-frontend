@@ -14,7 +14,7 @@ export class Resolver extends Component {
 
 	constructor (props) {
 		super(props);
-		this.state = { loading: false, didDocument: null, didResolutionMetadata: null, didDocumentMetadata: null, content: null, didUrlDereferencingMetadata: null, contentMetadata: null, error: null, copyText: false };
+		this.state = { loading: false, didDocument: null, didResolutionMetadata: null, didDocumentMetadata: null, content: null, dereferencingMetadata: null, contentMetadata: null, error: null, copyText: false };
 	}
 
 	render() {
@@ -28,10 +28,10 @@ export class Resolver extends Component {
 				didResolutionMetadata={this.state.didResolutionMetadata}
 				didDocumentMetadata={this.state.didDocumentMetadata} />
 			);
-		else if (this.state.content || this.state.didUrlDereferencingMetadata || this.state.contentMetadata) resultOrError = (
+		else if (this.state.content || this.state.dereferencingMetadata || this.state.contentMetadata) resultOrError = (
 			<DidUrlResult
 				content={this.state.content}
-				didUrlDereferencingMetadata={this.state.didUrlDereferencingMetadata}
+				dereferencingMetadata={this.state.dereferencingMetadata}
 				contentMetadata={this.state.contentMetadata} />
 		);
 
@@ -57,7 +57,7 @@ export class Resolver extends Component {
 						didMetadata={this.state.didDocumentMetadata} />
 				</Tab.Pane> }
 		]
-		else if (this.state.content || this.state.didUrlDereferencingMetadata) panes = [
+		else if (this.state.content || this.state.dereferencingMetadata) panes = [
 			{ menuItem: 'RESULT', render: () =>
 				<Tab.Pane loading={this.state.loading}>
 					{resultOrError}
@@ -70,7 +70,7 @@ export class Resolver extends Component {
 			{ menuItem: 'DEREFERENCING METADATA', render: () =>
 				<Tab.Pane loading={this.state.loading}>
 					<DidMetadata
-						didMetadata={this.state.didUrlDereferencingMetadata} />
+						didMetadata={this.state.dereferencingMetadata} />
 				</Tab.Pane> },
 			{ menuItem: 'CONTENT METADATA', render: () =>
 				<Tab.Pane loading={this.state.loading}>
@@ -130,27 +130,27 @@ export class Resolver extends Component {
 	}
 
 	onClear() {
-		this.setState({ loading: false, didDocument: null, didResolutionMetadata: null, didDocumentMetadata: null, content: null, didUrlDereferencingMetadata: null, contentMetadata: null, error: null });
+		this.setState({ loading: false, didDocument: null, didResolutionMetadata: null, didDocumentMetadata: null, content: null, dereferencingMetadata: null, contentMetadata: null, error: null });
 	}
 
 	onLoading() {
-		this.setState({ loading: true, didDocument: null, didResolutionMetadata: null, didDocumentMetadata: null, content: null, didUrlDereferencingMetadata: null, contentMetadata: null, error: null });
+		this.setState({ loading: true, didDocument: null, didResolutionMetadata: null, didDocumentMetadata: null, content: null, dereferencingMetadata: null, contentMetadata: null, error: null });
 	}
 
 	onResultResolve(didDocument, didResolutionMetadata, didDocumentMetadata) {
-		this.setState({ loading: false, didDocument: didDocument, didResolutionMetadata: didResolutionMetadata, didDocumentMetadata: didDocumentMetadata, content: null, didUrlDereferencingMetadata: null, contentMetadata: null, error: null });
+		this.setState({ loading: false, didDocument: didDocument, didResolutionMetadata: didResolutionMetadata, didDocumentMetadata: didDocumentMetadata, content: null, dereferencingMetadata: null, contentMetadata: null, error: null });
 	}
 
 	onError(error, didDocument, didResolutionMetadata, didDocumentMetadata) {
-		this.setState({ loading: false, didDocument: didDocument, didResolutionMetadata: didResolutionMetadata, didDocumentMetadata: didDocumentMetadata, content: null, didUrlDereferencingMetadata: null, contentMetadata: null, error: error });
+		this.setState({ loading: false, didDocument: didDocument, didResolutionMetadata: didResolutionMetadata, didDocumentMetadata: didDocumentMetadata, content: null, dereferencingMetadata: null, contentMetadata: null, error: error });
 	}
 
-	onResultDereference(content, didUrlDereferencingMetadata, contentMetadata) {
-		this.setState({ loading: false, didDocument: null, didResolutionMetadata: null, didDocumentMetadata: null, content: content, didUrlDereferencingMetadata: didUrlDereferencingMetadata, contentMetadata: contentMetadata, error: null });
+	onResultDereference(content, dereferencingMetadata, contentMetadata) {
+		this.setState({ loading: false, didDocument: null, didResolutionMetadata: null, didDocumentMetadata: null, content: content, dereferencingMetadata: dereferencingMetadata, contentMetadata: contentMetadata, error: null });
 	}
 
-	onError(error, content, didUrlDereferencingMetadata, contentMetadata) {
-		this.setState({ loading: false, didDocument: null, didResolutionMetadata: null, didDocumentMetadata: null, content: content, didUrlDereferencingMetadata: didUrlDereferencingMetadata, contentMetadata: contentMetadata, error: error });
+	onError(error, content, dereferencingMetadata, contentMetadata) {
+		this.setState({ loading: false, didDocument: null, didResolutionMetadata: null, didDocumentMetadata: null, content: content, dereferencingMetadata: dereferencingMetadata, contentMetadata: contentMetadata, error: error });
 	}
 }
 

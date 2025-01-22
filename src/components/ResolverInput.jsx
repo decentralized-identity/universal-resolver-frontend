@@ -27,10 +27,10 @@ export class ResolverInput extends Component {
 				const didResolutionMetadata = response.data.didResolutionMetadata;
 				const didDocumentMetadata = response.data.didDocumentMetadata;
 				const content = response.data.content;
-				const didUrlDereferencingMetadata = response.data.didUrlDereferencingMetadata;
+				const dereferencingMetadata = response.data.dereferencingMetadata;
 				const contentMetadata = response.data.contentMetadata;
 				if (didDocument || didResolutionMetadata) this.props.onResultResolve(didDocument, didResolutionMetadata, didDocumentMetadata);
-				if (content || didUrlDereferencingMetadata) this.props.onResultDereference(content, didUrlDereferencingMetadata, contentMetadata);
+				if (content || dereferencingMetadata) this.props.onResultDereference(content, dereferencingMetadata, contentMetadata);
 			})
 			.catch(error => {
 				console.log("error: " + String(error));

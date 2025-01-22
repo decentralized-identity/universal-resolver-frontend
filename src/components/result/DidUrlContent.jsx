@@ -7,7 +7,7 @@ export class DidUrlContent extends Component {
 	render() {
 		const contentString = this.props.content ? JSON.stringify(this.props.content, null, 2) : null;
 		const content = contentString ? (
-			<Highlight className='js'>
+			<Highlight>
 				{contentString}
 			</Highlight>
 		) : null;
