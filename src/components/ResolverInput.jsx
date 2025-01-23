@@ -17,6 +17,8 @@ export class ResolverInput extends Component {
 		const url = getBackendUrl() + '1.0/identifiers/' + input;
 		const acceptMediaType = isResolve ? 'application/ld+json;profile="https://w3id.org/did-resolution"' : 'application/ld+json;profile="https://w3id.org/did-url-dereferencing"';
 		const config = {'headers': {'Accept': acceptMediaType}};
+		console.log("input: " + input);
+		console.log("isResolve: " + isResolve);
 		console.log("url: " + url);
 		console.log("config: " + JSON.stringify(config));
 		axios
