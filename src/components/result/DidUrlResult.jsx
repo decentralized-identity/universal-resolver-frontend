@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import { Segment, Item, Card, Divider, Image } from 'semantic-ui-react'
+import { Highlight } from 'react-fast-highlight';
 
 import DidUrl from './DidUrl';
 
