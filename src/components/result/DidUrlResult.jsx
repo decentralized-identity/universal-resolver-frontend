@@ -20,7 +20,7 @@ export class DidUrlResult extends Component {
 				<Image src={imageSrc} />
 			);
 		} else {
-			const contentString = this.props.content;
+			const contentString = this.props.content ? JSON.stringify(this.props.content, null, 2) : null;
 			contentRendering = (
 				<Highlight>
 					{contentString}
