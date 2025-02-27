@@ -47,7 +47,10 @@ export class ResolverInput extends Component {
 						const didDocument = error.response.data.didDocument;
 						const didResolutionMetadata = error.response.data.didResolutionMetadata ? error.response.data.didResolutionMetadata : error.response.data;
 						const didDocumentMetadata = error.response.data.didDocumentMetadata;
-						this.props.onError(errorString, didDocument, didResolutionMetadata, didDocumentMetadata);
+						const content = error.response.data.content;
+						const dereferencingMetadata = error.response.data.dereferencingMetadata ? error.response.data.dereferencingMetadata : error.response.data;
+						const contentMetadata = error.response.data.contentMetadata;
+						this.props.onError(errorString, didDocument, didResolutionMetadata, didDocumentMetadata, content, dereferencingMetadata, contentMetadata);
 					} else {
 						this.props.onError(errorString + ': ' + error.response.data);
 					}
