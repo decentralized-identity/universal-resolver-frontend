@@ -141,16 +141,12 @@ export class Resolver extends Component {
 		this.setState({ loading: false, didDocument: didDocument, didResolutionMetadata: didResolutionMetadata, didDocumentMetadata: didDocumentMetadata, content: null, dereferencingMetadata: null, contentMetadata: null, error: null });
 	}
 
-	onError(error, didDocument, didResolutionMetadata, didDocumentMetadata) {
-		this.setState({ loading: false, didDocument: didDocument, didResolutionMetadata: didResolutionMetadata, didDocumentMetadata: didDocumentMetadata, content: null, dereferencingMetadata: null, contentMetadata: null, error: error });
-	}
-
 	onResultDereference(content, dereferencingMetadata, contentMetadata) {
 		this.setState({ loading: false, didDocument: null, didResolutionMetadata: null, didDocumentMetadata: null, content: content, dereferencingMetadata: dereferencingMetadata, contentMetadata: contentMetadata, error: null });
 	}
 
-	onError(error, content, dereferencingMetadata, contentMetadata) {
-		this.setState({ loading: false, didDocument: null, didResolutionMetadata: null, didDocumentMetadata: null, content: content, dereferencingMetadata: dereferencingMetadata, contentMetadata: contentMetadata, error: error });
+	onError(error, didDocument, didResolutionMetadata, didDocumentMetadata, content, dereferencingMetadata, contentMetadata) {
+		this.setState({ loading: false, didDocument: didDocument, didResolutionMetadata: didResolutionMetadata, didDocumentMetadata: didDocumentMetadata, content: content, dereferencingMetadata: dereferencingMetadata, contentMetadata: contentMetadata, error: error });
 	}
 }
 
