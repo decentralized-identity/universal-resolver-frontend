@@ -1,0 +1,8 @@
+services:
+  universal-resolver-frontend:
+    image: universalresolver/universal-resolver-frontend:latest
+    container_name: universal-resolver-frontend
+    ports:
+      - "7081:7081"
+    environment:
+      BACKEND_URL: http://localhost:8080/
