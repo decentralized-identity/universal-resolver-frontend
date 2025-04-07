@@ -8,16 +8,18 @@ export class ResolverInput extends Component {
 
 	constructor(props) {
 		super(props);
-		this.state = { input: this.props.input, example: '' };
+		this.state = { input: this.props.input, options: this.props.options, example: '' };
 	}
 
 	resolve() {
+		const options = this.state.options;
 		const input = this.state.input.trim();
 		const isResolve = ! (input.includes('/') || input.includes('?'));
-		const url = getBackendUrl() + '1.0/identifiers/' + input;
+		const url = getBackendUrl() + '1.0/identifiers/' + input + (Object.keys(options).length === 0 ? "" : "?" + encodeURIComponent(JSON.stringify(options)));
 		const acceptMediaType = isResolve ? 'application/ld+json;profile="https://w3id.org/did-resolution"' : 'application/ld+json;profile="https://w3id.org/did-url-dereferencing"';
 		const config = {'headers': {'Accept': acceptMediaType}};
 		console.log("input: " + input);
+		console.log("options: " + JSON.stringify(options));
 		console.log("isResolve: " + isResolve);
 		console.log("url: " + url);
 		console.log("config: " + JSON.stringify(config));
@@ -103,6 +105,7 @@ export class ResolverInput extends Component {
 				<Button primary onClick={this.onClickResolve.bind(this)}>Resolve</Button>
 				<Button secondary onClick={this.onClickClear.bind(this)}>Clear</Button>
 				<Dropdown placeholder='Examples' selection options={examples} value={this.state.example} onChange={this.onChangeExample.bind(this)} />
+				<Input label='options' value={this.state.options} onChange={this.onChangeInput.bind(this)} />
 			</Item>
 		);
 	}

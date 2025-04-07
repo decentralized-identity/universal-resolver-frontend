@@ -77,23 +77,26 @@ export class App extends Component {
 
 	render() {
 		var input;
+		var options;
 		var autoResolve;
 		if (this.props.location.hash) {
-			if (this.props.location.hash.indexOf("#did=") == 0) {
+			if (this.props.location.hash.indexOf("#did=") === 0) {
 				input = this.props.location.hash.substr("#did=".length);
 			} else {
 				input = this.props.location.hash.substr(1);
 			}
+			options = {};
 			autoResolve = true;
 		} else {
 			input = 'did:ethr:mainnet:0x3b0bc51ab9de1e5b7b6e34e5b960285805c41736';
+			options = {};
 			autoResolve = false;
 		}
 		return (
 			<div className="app">
 				<Heading />
 				<Drivers drivers={this.state.drivers} validity={this.state.validity} />
-				<Resolver input={input} autoResolve={autoResolve} examples={this.state.examples} />
+				<Resolver input={input} options={options} autoResolve={autoResolve} examples={this.state.examples} />
 				<Footer />
 			</div>
 		);

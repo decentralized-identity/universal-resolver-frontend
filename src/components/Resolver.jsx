@@ -83,6 +83,7 @@ export class Resolver extends Component {
 			<Segment className="resolver">
 				<ResolverInput
 					input={this.props.input}
+					options={this.props.options}
 					autoResolve={this.props.autoResolve}
 					examples={this.props.examples}
 					onClear={this.onClear.bind(this)}
@@ -101,7 +102,7 @@ export class Resolver extends Component {
 									
 								}
 								this.toggleCopyText()
-							}} style={{paddingBottom: '10px'}} primary >{!this.state.didDocument ? "Resolve to enable copy": "Copy link to result"}
+							}} style={{paddingBottom: '10px'}} primary >{"Copy"}
 						</Button>
 						<p className={this.state.copyText ? `feature_button-text` : `feature_button-hidden`}>Url with DID copied to clipboard 🚀 🚀 🚀</p>
 					</div>
@@ -112,7 +113,7 @@ export class Resolver extends Component {
 								if(this.state.didDocument) {
 									window.open("https://didlint.ownyourdata.eu/validate?did=" + this.state.didDocument.id, '_blank');
 								}
-							}} style={{paddingBottom: '10px'}} primary >{!this.state.didDocument ? "Check Compliance": "Check Compliance"}
+							}} style={{paddingBottom: '10px'}} primary >{"Validate"}
 						</Button>
 					</div>
 				</div>
