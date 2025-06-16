@@ -1,26 +1,34 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-import { Item, Input, Button, Dropdown } from 'semantic-ui-react';
+import { Item, Input, Button, TextArea, Dropdown } from 'semantic-ui-react';
 import { getBackendUrl } from './utils';
 
 export class ResolverInput extends Component {
 
 	constructor(props) {
 		super(props);
-		this.state = { input: this.props.input, example: '' };
+		this.state = { input: this.props.input, options: '{}', example: '' };
 	}
 
 	resolve() {
 		const input = this.state.input.trim();
+		const options = this.state.options.trim();
 		const isResolve = ! (input.includes('/') || input.includes('?'));
-		const url = getBackendUrl() + '1.0/identifiers/' + input;
 		const acceptMediaType = isResolve ? 'application/ld+json;profile="https://w3id.org/did-resolution"' : 'application/ld+json;profile="https://w3id.org/did-url-dereferencing"';
 		const config = {'headers': {'Accept': acceptMediaType}};
+		var url;
+		if (Object.keys(JSON.parse(options)).length === 0) {
+			url = getBackendUrl() + '1.0/identifiers/' + input;
+		} else {
+			url = getBackendUrl() + '1.0/identifiers/' + encodeURIComponent(input) + '?' + encodeURIComponent(options);
+		}
 		console.log("input: " + input);
+		console.log("options: " + options);
 		console.log("isResolve: " + isResolve);
-		console.log("url: " + url);
+		console.log("acceptMediaType: " + acceptMediaType);
 		console.log("config: " + JSON.stringify(config));
+		console.log("url: " + url);
 		axios
 			.get(url, config)
 			.then(response => {
@@ -95,14 +103,19 @@ export class ResolverInput extends Component {
 		this.setState({ input: e.target.value });
 	}
 
+	onChangeOptions(e) {
+		this.setState({ options: e.target.value });
+	}
+
 	render() {
 		const examples = this.props.examples.map((example) => ({ text: example, value: example }));
 		return (
 			<Item className="resolver-input">
-				<Input label='did-url' value={this.state.input} onChange={this.onChangeInput.bind(this)} />
+				<Input label='did-url' className="did-url-input" value={this.state.input} onChange={this.onChangeInput.bind(this)} />
 				<Button primary onClick={this.onClickResolve.bind(this)}>Resolve</Button>
 				<Button secondary onClick={this.onClickClear.bind(this)}>Clear</Button>
 				<Dropdown placeholder='Examples' selection options={examples} value={this.state.example} onChange={this.onChangeExample.bind(this)} />
+				<Input label='options' className="options-input" value={this.state.options} onChange={this.onChangeOptions.bind(this)} />
 			</Item>
 		);
 	}

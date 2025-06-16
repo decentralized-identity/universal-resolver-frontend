@@ -6,10 +6,18 @@
 }
 
 .resolver-input .input input {
+}
+
+.resolver-input .did-url-input input {
 	margin-right: 20px;
 	width: 400px;
 }
 
 .resolver-input div.dropdown {
-	width: 450px;
+	margin-right: 20px;
+	width: 250px;
+}
+
+.resolver-input .options-input input {
+	width: 60px;
 }
