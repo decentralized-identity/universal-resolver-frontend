@@ -101,9 +101,9 @@ export class Resolver extends Component {
 									
 								}
 								this.toggleCopyText()
-							}} style={{paddingBottom: '10px'}} primary >{!this.state.didDocument ? "Resolve to enable copy": "Copy link to result"}
+							}} style={{paddingBottom: '10px'}} primary >{!this.state.didDocument ? "Copy link to resolution query": "Copy link to resolution query"}
 						</Button>
-						<p className={this.state.copyText ? `feature_button-text` : `feature_button-hidden`}>Url with DID copied to clipboard 🚀 🚀 🚀</p>
+						<p className={this.state.copyText ? `feature_button-text` : `feature_button-hidden`}>URL with DID copied to clipboard 🚀 🚀 🚀</p>
 					</div>
 					<div className='feature_button'>
 						<Button 
@@ -112,7 +112,7 @@ export class Resolver extends Component {
 								if(this.state.didDocument) {
 									window.open("https://didlint.ownyourdata.eu/validate?did=" + this.state.didDocument.id, '_blank');
 								}
-							}} style={{paddingBottom: '10px'}} primary >{!this.state.didDocument ? "Check Compliance": "Check Compliance"}
+							}} style={{paddingBottom: '10px'}} primary >{!this.state.didDocument ? "Validate result with DID Lint": "Validate result with DID Lint"}
 						</Button>
 					</div>
 				</div>
