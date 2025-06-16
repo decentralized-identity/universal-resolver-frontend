@@ -21,7 +21,7 @@ export class ResolverInput extends Component {
 		if (Object.keys(JSON.parse(options)).length === 0) {
 			url = getBackendUrl() + '1.0/identifiers/' + input;
 		} else {
-			url = getBackendUrl() + '1.0/identifiers/' + encodeURIComponent(input) + '?' + encodeURIComponent(options);
+			url = getBackendUrl() + '1.0/identifiers/' + encodeURIComponent(input) + '?' + encodeURIComponent(JSON.stringify(JSON.parse(options)));
 		}
 		console.log("input: " + input);
 		console.log("options: " + options);
