@@ -47,7 +47,7 @@ export class ResolverInput extends Component {
 				if (error.response && error.response.data) {
 					var errorString;
 					if (error.response.data.didResolutionMetadata && error.response.data.didResolutionMetadata['error']) {
-						errorString = "[" + error.response.data.didResolutionMetadata['error'] + "] " + error.response.data.didResolutionMetadata['errorMessage'];
+						errorString = "[" + error.response.data.didResolutionMetadata['error']['type'] + "] " + error.response.data.didResolutionMetadata['error']['details'];
 					} else {
 						errorString = String(error);
 					}
