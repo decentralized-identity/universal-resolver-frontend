@@ -15,7 +15,7 @@ export class ResolverInput extends Component {
 		const input = this.state.input.trim();
 		const options = this.state.options.trim();
 		const isResolve = ! (input.includes('/') || input.includes('?'));
-		const acceptMediaType = isResolve ? 'application/ld+json;profile="https://w3id.org/did-resolution"' : 'application/ld+json;profile="https://w3id.org/did-url-dereferencing"';
+		const acceptMediaType = isResolve ? 'application/did-resolution' : 'application/did-url-dereferencing';
 		const config = {'headers': {'Accept': acceptMediaType}};
 		var url;
 		if (Object.keys(JSON.parse(options)).length === 0) {
